@@ -1,1 +1,98 @@
-{}
+{
+  "interactive-corporate-timeline": {
+    "thumbnail": {
+      "url": "/media/interactive-corporate-timeline/thumb.jpg",
+      "width": 1280,
+      "height": 720,
+      "alt": "Visitor touching a milestone on a wide multi-screen timeline wall"
+    },
+    "video": {
+      "url": "https://oo1spadkkh5t5rpp.public.blob.vercel-storage.com/videos/interactive-corporate-timeline.mp4",
+      "alt": "Interactive Corporate Timeline video"
+    }
+  },
+  "netflix-cowboy-bebop-vending-machine": {
+    "thumbnail": {
+      "url": "/media/netflix-cowboy-bebop-vending-machine/thumb.jpg",
+      "width": 1280,
+      "height": 720,
+      "alt": "Cowboy Bebop branded vending machine with four screens lit up"
+    },
+    "video": {
+      "url": "https://oo1spadkkh5t5rpp.public.blob.vercel-storage.com/videos/netflix-cowboy-bebop-vending-machine.mp4",
+      "alt": "Netflix Cowboy Bebop Vending Machine video"
+    }
+  },
+  "nyit-interactive-video-wall": {
+    "thumbnail": {
+      "url": "/media/nyit-interactive-video-wall/thumb.jpg",
+      "width": 1280,
+      "height": 720,
+      "alt": "Nine-screen interactive video wall in the NYIT lobby"
+    },
+    "video": {
+      "url": "https://oo1spadkkh5t5rpp.public.blob.vercel-storage.com/videos/nyit-interactive-video-wall.mp4",
+      "alt": "NYIT Interactive Video Wall video"
+    }
+  },
+  "kaiser-permanente-health-quiz-kiosk": {
+    "thumbnail": {
+      "url": "/media/kaiser-permanente-health-quiz-kiosk/thumb.jpg",
+      "width": 1280,
+      "height": 720,
+      "alt": "Kaiser Permanente kiosk with a touchscreen and large illuminated buttons"
+    },
+    "video": {
+      "url": "https://oo1spadkkh5t5rpp.public.blob.vercel-storage.com/videos/kaiser-permanente-health-quiz-kiosk.mp4",
+      "alt": "Kaiser Permanente Health Quiz Kiosk video"
+    }
+  },
+  "interactive-ipad-portfolio": {
+    "thumbnail": {
+      "url": "/media/interactive-ipad-portfolio/thumb.jpg",
+      "width": 1280,
+      "height": 720,
+      "alt": "iPad showing a grid of motion graphics portfolio pieces"
+    },
+    "video": {
+      "url": "https://oo1spadkkh5t5rpp.public.blob.vercel-storage.com/videos/interactive-ipad-portfolio.mp4",
+      "alt": "Interactive iPad Portfolio video"
+    }
+  },
+  "3d-first-person-shooter": {
+    "thumbnail": {
+      "url": "/media/3d-first-person-shooter/thumb.jpg",
+      "width": 1280,
+      "height": 720,
+      "alt": "Screenshot from a 3D first-person shooter level"
+    },
+    "video": {
+      "url": "https://oo1spadkkh5t5rpp.public.blob.vercel-storage.com/videos/3d-first-person-shooter.mp4",
+      "alt": "3D First-Person Shooter video"
+    }
+  },
+  "meta2-augmented-reality-breakout": {
+    "thumbnail": {
+      "url": "/media/meta2-augmented-reality-breakout/thumb.jpg",
+      "width": 1280,
+      "height": 720,
+      "alt": "Player inside a cylinder of colored bricks in augmented reality"
+    },
+    "video": {
+      "url": "https://oo1spadkkh5t5rpp.public.blob.vercel-storage.com/videos/meta2-augmented-reality-breakout.mp4",
+      "alt": "Augmented Reality Breakout video"
+    }
+  },
+  "interactive-work-reel": {
+    "thumbnail": {
+      "url": "/media/interactive-work-reel/thumb.jpg",
+      "width": 1280,
+      "height": 720,
+      "alt": "Montage of interactive kiosks and video walls"
+    },
+    "video": {
+      "url": "https://oo1spadkkh5t5rpp.public.blob.vercel-storage.com/videos/interactive-work-reel.mp4",
+      "alt": "Interactive Work Reel video"
+    }
+  }
+}
