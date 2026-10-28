@@ -1,0 +1,1316 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3840.61 2160">
+  <defs>
+    <style>
+      .st0{fill:#f3c600;}
+      .st1{fill:#db0505;}
+      .temp{fill:#00ff73;}
+
+      #Hex {
+        opacity: 1;
+      }
+
+      #Hex g {
+        opacity: 1;
+        
+        
+        
+        
+        
+      }
+
+      
+
+      .hex-cls-1 {
+        fill: #ffcc00;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+
+      .hex-cls-2 {
+        fill: #ffcc00;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-3 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-4 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-5 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-6 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-7 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #ffcc00;
+        stroke-miterlimit: 10;
+        opacity: 1;
+      }
+      .hex-cls-8 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-9 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-10 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-11 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-12 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-13 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-14 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-15 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-16 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-17 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-18 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-19 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-20 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-21 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-22 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-23 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-24 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-25 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-26 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-27 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-28 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-29 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-30 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-31 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-32 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-33 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-34 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-35 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-36 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-37 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-38 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-39 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-40 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-41 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-42 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-43 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-44 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-45 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-46 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-47 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-48 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-49 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-50 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-51 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-52 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-53 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-54 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-55 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-56 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-57 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-58 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-59 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-60 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-61 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-62 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-63 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-64 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-65 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-66 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-67 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-68 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-69 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-70 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-71 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-72 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-73 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-74 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-75 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-76 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-77 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-78 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-79 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-80 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-81 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-82 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-83 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-84 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-85 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-86 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-87 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-88 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 1;
+      }
+      .hex-cls-89 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-90 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-91 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-92 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-93 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-94 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-95 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-96 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-97 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-98 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-99 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-100 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-101 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-102 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-103 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 1;
+      }
+      .hex-cls-104 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-105 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-106 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-107 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-108 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-109 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-110 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-111 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-112 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-113 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-114 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 1;
+      }
+      .hex-cls-115 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-116 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-117 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-118 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-119 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-120 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 1;
+      }
+      .hex-cls-121 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-122 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-123 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-124 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-125 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-126 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-127 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+      .hex-cls-128 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 1;
+      }
+      .hex-cls-129 {
+        fill: #d30202;
+        fill-opacity: 1;
+        stroke: #e5e5e5;
+        stroke-miterlimit: 10;
+        opacity: 0.29;
+      }
+    </style>
+  </defs>
+
+  <g id="Hex">
+  <g id="Hex-1" style="--order:1">
+    <polygon class="hex-cls-1" style="--order:1" points="21.84 0 0 0 0 268.8 6.3 268.8 91.37 121.45 21.84 0"/>
+  </g>
+  <g id="Hex-2" style="--order:3">
+    <polygon class="hex-cls-2" style="--order:3" points="21.84 0 92.16 121.8 262.3 121.8 332.88 0 21.84 0"/>
+  </g>
+  <g id="Hex-3" style="--order:4">
+    <polygon class="hex-cls-3" style="--order:2" points="531.7 0 332.88 0 262.22 122.39 347.29 269.73 517.43 269.73 602.5 122.39 531.7 0"/>
+  </g>
+  <g id="Hex-4" style="--order:5">
+    <polygon class="hex-cls-4" style="--order:4" points="531.7 0 602.55 122.72 772.69 122.72 843.02 0 531.7 0"/>
+  </g>
+  <g id="Hex-5" style="--order:6">
+    <polygon class="hex-cls-5" style="--order:5" points="1041.98 0 843.02 0 772.37 122.39 857.43 269.73 1027.57 269.73 1112.64 122.39 1041.98 0"/>
+  </g>
+  <g id="Hex-6" style="--order:7">
+    <polygon class="hex-cls-6" style="--order:6" points="1041.98 0 1113.34 122.72 1283.48 122.72 1354.33 0 1041.98 0"/>
+  </g>
+  <g id="Hex-7" style="--order:8">
+    <polygon class="hex-cls-7" style="--order:3" style="--order:1" points="1553 0 1354.33 0 1283.39 122.39 1368.46 269.73 1538.6 269.73 1623.66 122.39 1553 0"/>
+  </g>
+  <g id="Hex-8" style="--order:9">
+    <polygon class="hex-cls-8" style="--order:8" points="1553 0 1624.37 122.72 1794.5 122.72 1865.35 0 1553 0"/>
+  </g>
+  <g id="Hex-9" style="--order:1">
+    <polygon class="hex-cls-9" style="--order:5" points="2064.03 0 1865.35 0 1794.41 122.39 1879.48 269.73 2049.62 269.73 2134.69 122.39 2064.03 0"/>
+  </g>
+  <g id="Hex-10" style="--order:2">
+    <polygon class="hex-cls-10" style="--order:2" points="2064.03 0 2134.9 122.72 2305.04 122.72 2375.89 0 2064.03 0"/>
+  </g>
+  <g id="Hex-11" style="--order:3">
+    <polygon class="hex-cls-11" points="2574.29 0 2375.89 0 2304.68 122.39 2389.75 269.73 2559.89 269.73 2644.95 122.39 2574.29 0"/>
+  </g>
+  <g id="Hex-12" style="--order:4">
+    <polygon class="hex-cls-12" points="2574.29 0 2646.64 122.72 2816.78 122.72 2887.63 0 2574.29 0"/>
+  </g>
+  <g id="Hex-13" style="--order:5">
+    <polygon class="hex-cls-13" style="--order:1" points="3087.69 0 2887.63 0 2817.46 122.39 2902.53 269.73 3072.66 269.73 3157.73 122.39 3087.69 0"/>
+  </g>
+  <g id="Hex-14" style="--order:6">
+    <polygon class="hex-cls-14" style="--order:6" points="3087.69 0 3158.54 122.72 3328.68 122.72 3400.02 0 3087.69 0"/>
+  </g>
+  <g id="Hex-15" style="--order:7">
+    <polygon class="hex-cls-15" style="--order:4" points="3599.62 0 3400.02 0 3329.36 122.39 3414.43 269.73 3584.57 269.73 3669.64 122.39 3599.62 0"/>
+  </g>
+  <g id="Hex-16" style="--order:8">
+    <polygon class="hex-cls-16" style="--order:2" points="3698.35 0 3649.18 0 3599.62 0 3670.47 122.72 3840.61 122.72 3839.41 0 3698.35 0"/>
+  </g>
+  <g id="Hex-17" style="--order:9">
+    <polygon class="hex-cls-17" style="--order:3" points="6.3 268.11 0 268.8 0 562.8 6.3 562.8 91.37 415.45 6.3 268.11"/>
+  </g>
+  <g id="Hex-18" style="--order:1">
+    <polygon class="hex-cls-18" style="--order:8" points="262.3 121.11 92.16 121.11 7.09 268.45 92.16 415.8 262.3 415.8 347.37 268.45 262.3 121.11"/>
+  </g>
+  <g id="Hex-19" style="--order:2">
+    <polygon class="hex-cls-19" style="--order:5" points="517.43 269.04 347.29 269.04 262.22 416.39 347.29 563.73 517.43 563.73 602.5 416.39 517.43 269.04"/>
+  </g>
+  <g id="Hex-20" style="--order:3">
+    <polygon class="hex-cls-20" points="772.69 122.03 602.55 122.03 517.48 269.37 602.55 416.72 772.69 416.72 857.76 269.37 772.69 122.03"/>
+  </g>
+  <g id="Hex-21" style="--order:4">
+    <polygon class="hex-cls-21" style="--order:1" points="1027.57 269.04 857.43 269.04 772.37 416.39 857.43 563.73 1027.57 563.73 1112.64 416.39 1027.57 269.04"/>
+  </g>
+  <g id="Hex-22" style="--order:5">
+    <polygon class="hex-cls-22" style="--order:6" points="1283.48 122.03 1113.34 122.03 1028.27 269.37 1113.34 416.72 1283.48 416.72 1368.55 269.37 1283.48 122.03"/>
+  </g>
+  <g id="Hex-23" style="--order:6">
+    <polygon class="hex-cls-23" style="--order:4" points="1538.6 269.04 1368.46 269.04 1283.39 416.39 1368.46 563.73 1538.6 563.73 1623.66 416.39 1538.6 269.04"/>
+  </g>
+  <g id="Hex-24" style="--order:7">
+    <polygon class="hex-cls-24" style="--order:2" points="1794.5 122.03 1624.37 122.03 1539.3 269.37 1624.37 416.72 1794.5 416.72 1879.57 269.37 1794.5 122.03"/>
+  </g>
+  <g id="Hex-25" style="--order:8">
+    <polygon class="hex-cls-25" points="2049.62 269.04 1879.48 269.04 1794.41 416.39 1879.48 563.73 2049.62 563.73 2134.69 416.39 2049.62 269.04"/>
+  </g>
+  <g id="Hex-26" style="--order:9">
+    <polygon class="hex-cls-26" style="--order:1" points="2305.04 122.03 2134.9 122.03 2049.83 269.37 2134.9 416.72 2305.04 416.72 2390.11 269.37 2305.04 122.03"/>
+  </g>
+  <g id="Hex-27" style="--order:1">
+    <polygon class="hex-cls-27" style="--order:8" points="2559.89 269.04 2389.75 269.04 2304.68 416.39 2389.75 563.73 2559.89 563.73 2644.95 416.39 2559.89 269.04"/>
+  </g>
+  <g id="Hex-28" style="--order:2">
+    <polygon class="hex-cls-28" style="--order:5" points="2816.78 122.03 2646.64 122.03 2561.57 269.37 2646.64 416.72 2816.78 416.72 2901.85 269.37 2816.78 122.03"/>
+  </g>
+  <g id="Hex-29" style="--order:3">
+    <polygon class="hex-cls-29" style="--order:6" points="3072.66 269.04 2902.53 269.04 2817.46 416.39 2902.53 563.73 3072.66 563.73 3157.73 416.39 3072.66 269.04"/>
+  </g>
+  <g id="Hex-30" style="--order:4">
+    <polygon class="hex-cls-30" style="--order:3" points="3328.68 122.03 3158.54 122.03 3073.47 269.37 3158.54 416.72 3328.68 416.72 3413.75 269.37 3328.68 122.03"/>
+  </g>
+  <g id="Hex-31" style="--order:5">
+    <polygon class="hex-cls-31" style="--order:4" points="3584.57 269.04 3414.43 269.04 3329.36 416.39 3414.43 563.73 3584.57 563.73 3669.64 416.39 3584.57 269.04"/>
+  </g>
+  <g id="Hex-32" style="--order:6">
+    <polygon class="hex-cls-32" points="3840.61 122.03 3670.47 122.03 3585.4 269.37 3670.47 416.72 3840.61 416.72 3839.41 276.87 3840.61 122.03"/>
+  </g>
+  <g id="Hex-33" style="--order:7">
+    <polygon class="hex-cls-33" style="--order:2" style="--order:1" points="6.3 563.11 0 562.8 0 857.8 6.3 857.8 91.37 710.45 6.3 563.11"/>
+  </g>
+  <g id="Hex-34" style="--order:8">
+    <polygon class="hex-cls-34" points="262.3 416.11 92.16 416.11 7.09 563.45 92.16 710.8 262.3 710.8 347.37 563.45 262.3 416.11"/>
+  </g>
+  <g id="Hex-35" style="--order:9">
+    <polygon class="hex-cls-35" style="--order:8" points="517.43 564.04 347.29 564.04 262.22 711.39 347.29 858.73 517.43 858.73 602.5 711.39 517.43 564.04"/>
+  </g>
+  <g id="Hex-36" style="--order:1">
+    <polygon class="hex-cls-36" points="772.69 417.03 602.55 417.03 517.48 564.37 602.55 711.72 772.69 711.72 857.76 564.37 772.69 417.03"/>
+  </g>
+  <g id="Hex-37" style="--order:2">
+    <polygon class="hex-cls-37" style="--order:6" points="1027.57 564.04 857.43 564.04 772.37 711.39 857.43 858.73 1027.57 858.73 1112.64 711.39 1027.57 564.04"/>
+  </g>
+  <g id="Hex-38" style="--order:3">
+    <polygon class="hex-cls-38" style="--order:5" points="1283.48 417.03 1113.34 417.03 1028.27 564.37 1113.34 711.72 1283.48 711.72 1368.55 564.37 1283.48 417.03"/>
+  </g>
+  <g id="Hex-39" style="--order:4">
+    <polygon class="hex-cls-39" style="--order:3" points="1538.6 564.04 1368.46 564.04 1283.39 711.39 1368.46 858.73 1538.6 858.73 1623.66 711.39 1538.6 564.04"/>
+  </g>
+  <g id="Hex-40" style="--order:5">
+    <polygon class="hex-cls-40" style="--order:4" points="1794.5 417.03 1624.37 417.03 1539.3 564.37 1624.37 711.72 1794.5 711.72 1879.57 564.37 1794.5 417.03"/>
+  </g>
+  <g id="Hex-41" style="--order:6">
+    <polygon class="hex-cls-41" style="--order:2" points="2049.62 564.04 1879.48 564.04 1794.41 711.39 1879.48 858.73 2049.62 858.73 2134.69 711.39 2049.62 564.04"/>
+  </g>
+  <g id="Hex-42" style="--order:7">
+    <polygon class="hex-cls-42" style="--order:1" points="2305.04 417.03 2134.9 417.03 2049.83 564.37 2134.9 711.72 2305.04 711.72 2390.11 564.37 2305.04 417.03"/>
+  </g>
+  <g id="Hex-43" style="--order:8">
+    <polygon class="hex-cls-43" style="--order:8" points="2559.89 564.04 2389.75 564.04 2304.68 711.39 2389.75 858.73 2559.89 858.73 2644.95 711.39 2559.89 564.04"/>
+  </g>
+  <g id="Hex-44" style="--order:9">
+    <polygon class="hex-cls-44" points="2816.78 417.03 2646.64 417.03 2561.57 564.37 2646.64 711.72 2816.78 711.72 2901.85 564.37 2816.78 417.03"/>
+  </g>
+  <g id="Hex-45" style="--order:1">
+    <polygon class="hex-cls-45" style="--order:6" points="3072.66 564.04 2902.53 564.04 2817.46 711.39 2902.53 858.73 3072.66 858.73 3157.73 711.39 3072.66 564.04"/>
+  </g>
+  <g id="Hex-46" style="--order:2">
+    <polygon class="hex-cls-46" style="--order:4" points="3328.68 417.03 3158.54 417.03 3073.47 564.37 3158.54 711.72 3328.68 711.72 3413.75 564.37 3328.68 417.03"/>
+  </g>
+  <g id="Hex-47" style="--order:3">
+    <polygon class="hex-cls-47" style="--order:5" points="3584.57 564.04 3414.43 564.04 3329.36 711.39 3414.43 858.73 3584.57 858.73 3669.64 711.39 3584.57 564.04"/>
+  </g>
+  <g id="Hex-48" style="--order:4">
+    <polygon class="hex-cls-48" style="--order:3" style="--order:2" points="3840.61 417.03 3670.47 417.03 3585.4 564.37 3670.47 711.72 3840.61 711.72 3840.61 417.03"/>
+  </g>
+  <g id="Hex-49" style="--order:5">
+    <polygon class="hex-cls-49" style="--order:1" points="6.3 858.11 0 857.8 0 1152.8 6.3 1152.8 91.37 1005.45 6.3 858.11"/>
+  </g>
+  <g id="Hex-50" style="--order:6">
+    <polygon class="hex-cls-50" points="262.3 711.11 92.16 711.11 7.09 858.45 92.16 1005.8 262.3 1005.8 347.37 858.45 262.3 711.11"/>
+  </g>
+  <g id="Hex-51" style="--order:7">
+    <polygon class="hex-cls-51" style="--order:6" points="517.43 859.04 347.29 859.04 262.22 1006.39 347.29 1153.73 517.43 1153.73 602.5 1006.39 517.43 859.04"/>
+  </g>
+  <g id="Hex-52" style="--order:8">
+    <polygon class="hex-cls-52" style="--order:8" points="772.69 712.03 602.55 712.03 517.48 859.37 602.55 1006.72 772.69 1006.72 857.76 859.37 772.69 712.03"/>
+  </g>
+  <g id="Hex-53" style="--order:9">
+    <polygon class="hex-cls-53" points="1027.57 859.04 857.43 859.04 772.37 1006.39 857.43 1153.73 1027.57 1153.73 1112.64 1006.39 1027.57 859.04"/>
+  </g>
+  <g id="Hex-54" style="--order:1">
+    <polygon class="hex-cls-54" points="1283.48 712.03 1113.34 712.03 1028.27 859.37 1113.34 1006.72 1283.48 1006.72 1368.55 859.37 1283.48 712.03"/>
+  </g>
+  <g id="Hex-55" style="--order:2">
+    <polygon class="hex-cls-55" points="1538.6 859.04 1368.46 859.04 1283.39 1006.39 1368.46 1153.73 1538.6 1153.73 1623.66 1006.39 1538.6 859.04"/>
+  </g>
+  <g id="Hex-56" style="--order:3">
+    <polygon class="hex-cls-56" style="--order:3" points="1794.5 712.03 1624.37 712.03 1539.3 859.37 1624.37 1006.72 1794.5 1006.72 1879.57 859.37 1794.5 712.03"/>
+  </g>
+  <g id="Hex-57" style="--order:4">
+    <polygon class="hex-cls-57" style="--order:4" points="2049.62 859.04 1879.48 859.04 1794.41 1006.39 1879.48 1153.73 2049.62 1153.73 2134.69 1006.39 2049.62 859.04"/>
+  </g>
+  <g id="Hex-58" style="--order:5">
+    <polygon class="hex-cls-58" style="--order:1" points="2305.04 712.03 2134.9 712.03 2049.83 859.37 2134.9 1006.72 2305.04 1006.72 2390.11 859.37 2305.04 712.03"/>
+  </g>
+  <g id="Hex-59" style="--order:6">
+    <polygon class="hex-cls-59" style="--order:5" points="2559.89 859.04 2389.75 859.04 2304.68 1006.39 2389.75 1153.73 2559.89 1153.73 2644.95 1006.39 2559.89 859.04"/>
+  </g>
+  <g id="Hex-60" style="--order:7">
+    <polygon class="hex-cls-60" style="--order:6" points="2816.78 712.03 2646.64 712.03 2561.57 859.37 2646.64 1006.72 2816.78 1006.72 2901.85 859.37 2816.78 712.03"/>
+  </g>
+  <g id="Hex-61" style="--order:8">
+    <polygon class="hex-cls-61" style="--order:8" points="3072.66 859.04 2902.53 859.04 2817.46 1006.39 2902.53 1153.73 3072.66 1153.73 3157.73 1006.39 3072.66 859.04"/>
+  </g>
+  <g id="Hex-62" style="--order:9">
+    <polygon class="hex-cls-62" points="3328.68 712.03 3158.54 712.03 3073.47 859.37 3158.54 1006.72 3328.68 1006.72 3413.75 859.37 3328.68 712.03"/>
+  </g>
+  <g id="Hex-63" style="--order:1">
+    <polygon class="hex-cls-63" style="--order:3" points="3584.57 859.04 3414.43 859.04 3329.36 1006.39 3414.43 1153.73 3584.57 1153.73 3669.64 1006.39 3584.57 859.04"/>
+  </g>
+  <g id="Hex-64" style="--order:2">
+    <polygon class="hex-cls-64" style="--order:2" points="3840.61 712.03 3670.47 712.03 3585.4 859.37 3670.47 1006.72 3840.61 1006.72 3840.61 712.03"/>
+  </g>
+  <g id="Hex-65" style="--order:3">
+    <polygon class="hex-cls-65" style="--order:1" points="6.3 1153.11 0 1152.8 0 1447.8 6.3 1447.8 91.37 1300.45 6.3 1153.11"/>
+  </g>
+  <g id="Hex-66" style="--order:4">
+    <polygon class="hex-cls-66" style="--order:5" points="262.3 1006.11 92.16 1006.11 7.09 1153.45 92.16 1300.8 262.3 1300.8 347.37 1153.45 262.3 1006.11"/>
+  </g>
+  <g id="Hex-67" style="--order:5">
+    <polygon class="hex-cls-67" style="--order:4" points="517.43 1154.04 347.29 1154.04 262.22 1301.39 347.29 1448.73 517.43 1448.73 602.5 1301.39 517.43 1154.04"/>
+  </g>
+  <g id="Hex-68" style="--order:6">
+    <polygon class="hex-cls-68" style="--order:6" points="772.69 1007.03 602.55 1007.03 517.48 1154.37 602.55 1301.72 772.69 1301.72 857.76 1154.37 772.69 1007.03"/>
+  </g>
+  <g id="Hex-69" style="--order:7">
+    <polygon class="hex-cls-69" style="--order:8" points="1027.57 1154.04 857.43 1154.04 772.37 1301.39 857.43 1448.73 1027.57 1448.73 1112.64 1301.39 1027.57 1154.04"/>
+  </g>
+  <g id="Hex-70" style="--order:8">
+    <polygon class="hex-cls-70" style="--order:2" points="1283.48 1007.03 1113.34 1007.03 1028.27 1154.37 1113.34 1301.72 1283.48 1301.72 1368.55 1154.37 1283.48 1007.03"/>
+  </g>
+  <g id="Hex-71" style="--order:9">
+    <polygon class="hex-cls-71" points="1538.6 1154.04 1368.46 1154.04 1283.39 1301.39 1368.46 1448.73 1538.6 1448.73 1623.66 1301.39 1538.6 1154.04"/>
+  </g>
+  <g id="Hex-72" style="--order:1">
+    <polygon class="hex-cls-72" style="--order:5" points="1794.5 1007.03 1624.37 1007.03 1539.3 1154.37 1624.37 1301.72 1794.5 1301.72 1879.57 1154.37 1794.5 1007.03"/>
+  </g>
+  <g id="Hex-73" style="--order:2">
+    <polygon class="hex-cls-73" style="--order:3" points="2049.62 1154.04 1879.48 1154.04 1794.41 1301.39 1879.48 1448.73 2049.62 1448.73 2134.69 1301.39 2049.62 1154.04"/>
+  </g>
+  <g id="Hex-74" style="--order:3">
+    <polygon class="hex-cls-74" style="--order:7" points="2305.04 1007.03 2134.9 1007.03 2049.83 1154.37 2134.9 1301.72 2305.04 1301.72 2390.11 1154.37 2305.04 1007.03"/>
+  </g>
+  <g id="Hex-75" style="--order:4">
+    <polygon class="hex-cls-75" style="--order:6" points="2559.89 1154.04 2389.75 1154.04 2304.68 1301.39 2389.75 1448.73 2559.89 1448.73 2644.95 1301.39 2559.89 1154.04"/>
+  </g>
+  <g id="Hex-76" style="--order:5">
+    <polygon class="hex-cls-76" style="--order:4" points="2816.78 1007.03 2646.64 1007.03 2561.57 1154.37 2646.64 1301.72 2816.78 1301.72 2901.85 1154.37 2816.78 1007.03"/>
+  </g>
+  <g id="Hex-77" style="--order:6">
+    <polygon class="hex-cls-77" style="--order:1" points="3072.66 1154.04 2902.53 1154.04 2817.46 1301.39 2902.53 1448.73 3072.66 1448.73 3157.73 1301.39 3072.66 1154.04"/>
+  </g>
+  <g id="Hex-78" style="--order:7">
+    <polygon class="hex-cls-78" style="--order:2" points="3328.68 1007.03 3158.54 1007.03 3073.47 1154.37 3158.54 1301.72 3328.68 1301.72 3413.75 1154.37 3328.68 1007.03"/>
+  </g>
+  <g id="Hex-79" style="--order:8">
+    <polygon class="hex-cls-79" points="3584.57 1154.04 3414.43 1154.04 3329.36 1301.39 3414.43 1448.73 3584.57 1448.73 3669.64 1301.39 3584.57 1154.04"/>
+  </g>
+  <g id="Hex-80" style="--order:9">
+    <polygon class="hex-cls-80" style="--order:8" points="3840.61 1007.03 3670.47 1007.03 3585.4 1154.37 3670.47 1301.72 3840.61 1301.72 3840.61 1007.03"/>
+  </g>
+  <g id="Hex-81" style="--order:1">
+    <polygon class="hex-cls-81" style="--order:3" points="6.3 1448.11 0 1447.8 0.06 1743.37 6.3 1742.8 91.37 1595.45 6.3 1448.11"/>
+  </g>
+  <g id="Hex-82" style="--order:2">
+    <polygon class="hex-cls-82" style="--order:6" points="262.3 1301.11 92.16 1301.11 7.09 1448.45 92.16 1595.8 262.3 1595.8 347.37 1448.45 262.3 1301.11"/>
+  </g>
+  <g id="Hex-83" style="--order:3">
+    <polygon class="hex-cls-83" style="--order:5" points="517.43 1449.04 347.29 1449.04 262.22 1596.39 347.29 1743.73 517.43 1743.73 602.5 1596.39 517.43 1449.04"/>
+  </g>
+  <g id="Hex-84" style="--order:4">
+    <polygon class="hex-cls-84" style="--order:7" points="772.69 1302.03 602.55 1302.03 517.48 1449.37 602.55 1596.72 772.69 1596.72 857.76 1449.37 772.69 1302.03"/>
+  </g>
+  <g id="Hex-85" style="--order:5">
+    <polygon class="hex-cls-85" points="1027.57 1449.04 857.43 1449.04 772.37 1596.39 857.43 1743.73 1027.57 1743.73 1112.64 1596.39 1027.57 1449.04"/>
+  </g>
+  <g id="Hex-86" style="--order:6">
+    <polygon class="hex-cls-86" points="1283.48 1302.03 1113.34 1302.03 1028.27 1449.37 1113.34 1596.72 1283.48 1596.72 1368.55 1449.37 1283.48 1302.03"/>
+  </g>
+  <g id="Hex-87" style="--order:7">
+    <polygon class="hex-cls-87" style="--order:4" points="1538.6 1449.04 1368.46 1449.04 1283.39 1596.39 1368.46 1743.73 1538.6 1743.73 1623.66 1596.39 1538.6 1449.04"/>
+  </g>
+  <g id="Hex-88" style="--order:8">
+    <polygon class="hex-cls-88" points="1794.5 1302.03 1624.37 1302.03 1539.3 1449.37 1624.37 1596.72 1794.5 1596.72 1879.57 1449.37 1794.5 1302.03"/>
+  </g>
+  <g id="Hex-89" style="--order:9">
+    <polygon class="hex-cls-89" style="--order:2" style="--order:1" points="2049.62 1449.04 1879.48 1449.04 1794.41 1596.39 1879.48 1743.73 2049.62 1743.73 2134.69 1596.39 2049.62 1449.04"/>
+  </g>
+  <g id="Hex-90" style="--order:1">
+    <polygon class="hex-cls-90" style="--order:3" points="2305.04 1302.03 2134.9 1302.03 2049.83 1449.37 2134.9 1596.72 2305.04 1596.72 2390.11 1449.37 2305.04 1302.03"/>
+  </g>
+  <g id="Hex-91" style="--order:2">
+    <polygon class="hex-cls-91" style="--order:5" points="2559.89 1449.04 2389.75 1449.04 2304.68 1596.39 2389.75 1743.73 2559.89 1743.73 2644.95 1596.39 2559.89 1449.04"/>
+  </g>
+  <g id="Hex-92" style="--order:3">
+    <polygon class="hex-cls-92" style="--order:6" points="2816.78 1302.03 2646.64 1302.03 2561.57 1449.37 2646.64 1596.72 2816.78 1596.72 2901.85 1449.37 2816.78 1302.03"/>
+  </g>
+  <g id="Hex-93" style="--order:4">
+    <polygon class="hex-cls-93" style="--order:7" points="3072.66 1449.04 2902.53 1449.04 2817.46 1596.39 2902.53 1743.73 3072.66 1743.73 3157.73 1596.39 3072.66 1449.04"/>
+  </g>
+  <g id="Hex-94" style="--order:5">
+    <polygon class="hex-cls-94" style="--order:8" points="3328.68 1302.03 3158.54 1302.03 3073.47 1449.37 3158.54 1596.72 3328.68 1596.72 3413.75 1449.37 3328.68 1302.03"/>
+  </g>
+  <g id="Hex-95" style="--order:6">
+    <polygon class="hex-cls-95" points="3584.57 1449.04 3414.43 1449.04 3329.36 1596.39 3414.43 1743.73 3584.57 1743.73 3669.64 1596.39 3584.57 1449.04"/>
+  </g>
+  <g id="Hex-96" style="--order:7">
+    <polygon class="hex-cls-96" style="--order:4" points="3840.61 1302.03 3670.47 1302.03 3585.4 1449.37 3670.47 1596.72 3840.61 1596.72 3840.61 1302.03"/>
+  </g>
+  <g id="Hex-97" style="--order:8">
+    <polygon class="hex-cls-97" points="6.3 1743.11 0.06 1743.37 1.31 2036.43 6.3 2037.8 91.37 1890.45 6.3 1743.11"/>
+  </g>
+  <g id="Hex-98" style="--order:9">
+    <polygon class="hex-cls-98" style="--order:3" points="262.3 1596.11 92.16 1596.11 7.09 1743.45 92.16 1890.8 262.3 1890.8 347.37 1743.45 262.3 1596.11"/>
+  </g>
+  <g id="Hex-99" style="--order:1">
+    <polygon class="hex-cls-99" style="--order:5" points="517.43 1744.04 347.29 1744.04 262.22 1891.39 347.29 2038.73 517.43 2038.73 602.5 1891.39 517.43 1744.04"/>
+  </g>
+  <g id="Hex-100" style="--order:2">
+    <polygon class="hex-cls-100" style="--order:2" points="772.69 1597.03 602.55 1597.03 517.48 1744.37 602.55 1891.72 772.69 1891.72 857.76 1744.37 772.69 1597.03"/>
+  </g>
+  <g id="Hex-101" style="--order:3">
+    <polygon class="hex-cls-101" style="--order:6" points="1027.57 1744.04 857.43 1744.04 772.37 1891.39 857.43 2038.73 1027.57 2038.73 1112.64 1891.39 1027.57 1744.04"/>
+  </g>
+  <g id="Hex-102" style="--order:4">
+    <polygon class="hex-cls-102" style="--order:1" points="1283.48 1597.03 1113.34 1597.03 1028.27 1744.37 1113.34 1891.72 1283.48 1891.72 1368.55 1744.37 1283.48 1597.03"/>
+  </g>
+  <g id="Hex-103" style="--order:5">
+    <polygon class="hex-cls-103" style="--order:7" points="1538.6 1744.04 1368.46 1744.04 1283.39 1891.39 1368.46 2038.73 1538.6 2038.73 1623.66 1891.39 1538.6 1744.04"/>
+  </g>
+  <g id="Hex-104" style="--order:6">
+    <polygon class="hex-cls-104" style="--order:8" points="1794.5 1597.03 1624.37 1597.03 1539.3 1744.37 1624.37 1891.72 1794.5 1891.72 1879.57 1744.37 1794.5 1597.03"/>
+  </g>
+  <g id="Hex-105" style="--order:7">
+    <polygon class="hex-cls-105" style="--order:4" points="2049.62 1744.04 1879.48 1744.04 1794.41 1891.39 1879.48 2038.73 2049.62 2038.73 2134.69 1891.39 2049.62 1744.04"/>
+  </g>
+  <g id="Hex-106" style="--order:8">
+    <polygon class="hex-cls-106" style="--order:5" points="2305.04 1597.03 2134.9 1597.03 2049.83 1744.37 2134.9 1891.72 2305.04 1891.72 2390.11 1744.37 2305.04 1597.03"/>
+  </g>
+  <g id="Hex-107" style="--order:1">
+    <polygon class="hex-cls-107" points="2559.89 1744.04 2389.75 1744.04 2304.68 1891.39 2389.75 2038.73 2559.89 2038.73 2644.95 1891.39 2559.89 1744.04"/>
+  </g>
+  <g id="Hex-108" style="--order:2">
+    <polygon class="hex-cls-108" points="2816.78 1597.03 2646.64 1597.03 2561.57 1744.37 2646.64 1891.72 2816.78 1891.72 2901.85 1744.37 2816.78 1597.03"/>
+  </g>
+  <g id="Hex-109" style="--order:3">
+    <polygon class="hex-cls-109" style="--order:3" points="3072.66 1744.04 2902.53 1744.04 2817.46 1891.39 2902.53 2038.73 3072.66 2038.73 3157.73 1891.39 3072.66 1744.04"/>
+  </g>
+  <g id="Hex-110" style="--order:4">
+    <polygon class="hex-cls-110" style="--order:2" points="3328.68 1597.03 3158.54 1597.03 3073.47 1744.37 3158.54 1891.72 3328.68 1891.72 3413.75 1744.37 3328.68 1597.03"/>
+  </g>
+  <g id="Hex-112" style="--order:5">
+    <polygon class="hex-cls-111" points="3584.57 1744.04 3414.43 1744.04 3329.36 1891.39 3414.43 2038.73 3584.57 2038.73 3669.64 1891.39 3584.57 1744.04"/>
+  </g>
+  <g id="Hex-113" style="--order:6">
+    <polygon class="hex-cls-112" style="--order:1" points="3840.61 1597.03 3670.47 1597.03 3585.4 1744.37 3670.47 1891.72 3840.61 1891.72 3840.61 1597.03"/>
+  </g>
+  <g id="Hex-114" style="--order:7">
+    <polygon class="hex-cls-113" style="--order:7" points="6.3 2038.11 1.31 2036.43 0 2160 77.27 2160 6.3 2038.11"/>
+  </g>
+  <g id="Hex-115" style="--order:8">
+    <polygon class="hex-cls-114" style="--order:6" points="262.3 1891.11 92.16 1891.11 7.09 2038.45 77.27 2160 277.45 2160 347.37 2038.45 262.3 1891.11"/>
+  </g>
+  <g id="Hex-116" style="--order:9">
+    <polygon class="hex-cls-115" style="--order:4" points="517.43 2039.04 347.29 2039.04 277.45 2160 587.13 2160 517.43 2039.04"/>
+  </g>
+  <g id="Hex-117" style="--order:1">
+    <polygon class="hex-cls-116" style="--order:5" points="772.69 1892.03 602.55 1892.03 517.48 2039.37 587.13 2160 788.11 2160 857.76 2039.37 772.69 1892.03"/>
+  </g>
+  <g id="Hex-118" style="--order:2">
+    <polygon class="hex-cls-117" points="1027.57 2039.04 857.43 2039.04 788.11 2160 1097.92 2160 1027.57 2039.04"/>
+  </g>
+  <g id="Hex-119" style="--order:3">
+    <polygon class="hex-cls-118" style="--order:2" points="1283.48 1892.03 1113.34 1892.03 1028.27 2039.37 1097.92 2160 1298.62 2160 1368.55 2039.37 1283.48 1892.03"/>
+  </g>
+  <g id="Hex-120" style="--order:4">
+    <polygon class="hex-cls-119" style="--order:1" points="1538.6 2039.04 1368.46 2039.04 1298.62 2160 1608.94 2160 1538.6 2039.04"/>
+  </g>
+  <g id="Hex-121" style="--order:4">
+    <polygon class="hex-cls-120" style="--order:8" points="1794.5 1892.03 1624.37 1892.03 1539.3 2039.37 1608.94 2160 1809.93 2160 1879.57 2039.37 1794.5 1892.03"/>
+  </g>
+  <g id="Hex-122" style="--order:5">
+    <polygon class="hex-cls-121" style="--order:7" points="2049.62 2039.04 1879.48 2039.04 1809.93 2160 2119.47 2160 2049.62 2039.04"/>
+  </g>
+  <g id="Hex-123" style="--order:6">
+    <polygon class="hex-cls-122" style="--order:6" points="2305.04 1892.03 2134.9 1892.03 2049.83 2039.37 2119.47 2160 2319.91 2160 2390.11 2039.37 2305.04 1892.03"/>
+  </g>
+  <g id="Hex-124" style="--order:7">
+    <polygon class="hex-cls-123" style="--order:4" points="2559.89 2039.04 2389.75 2039.04 2319.91 2160 2631.21 2160 2559.89 2039.04"/>
+  </g>
+  <g id="Hex-125" style="--order:8">
+    <polygon class="hex-cls-124" style="--order:3" points="2816.78 1892.03 2646.64 1892.03 2561.57 2039.37 2631.21 2160 2832.69 2160 2901.85 2039.37 2816.78 1892.03"/>
+  </g>
+  <g id="Hex-126" style="--order:9">
+    <polygon class="hex-cls-125" style="--order:2" points="3072.66 2039.04 2902.53 2039.04 2832.69 2160 3143.11 2160 3072.66 2039.04"/>
+  </g>
+  <g id="Hex-127" data-name="Hex-126">
+    <polygon class="hex-cls-126" style="--order:8" points="3328.68 1892.03 3158.54 1892.03 3073.47 2039.37 3143.11 2160 3344.59 2160 3413.75 2039.37 3328.68 1892.03"/>
+  </g>
+  <g id="Hex-128">
+    <polygon class="hex-cls-127" style="--order:5" points="3584.57 2039.04 3414.43 2039.04 3344.59 2160 3655.04 2160 3584.57 2039.04"/>
+  </g>
+  <g id="Hex-129">
+    <polygon class="hex-cls-128" style="--order:4" points="3840.61 1892.03 3670.47 1892.03 3585.4 2039.37 3655.04 2160 3840.61 2160 3840.61 1892.03"/>
+  </g>
+</g>
+</svg>

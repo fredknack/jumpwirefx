@@ -1,26 +1,57 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-brand: #ff6a00;
+  --color-brand-deep: #c8102e;
+  --color-brand-light: #ffb300;
+  --color-ink: #111111;
+  --color-paper: #ffffff;
+  --gradient-hero: linear-gradient(135deg, #ffb300 0%, #ff6a00 55%, #c8102e 100%);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand: var(--color-brand);
+  --color-brand-deep: var(--color-brand-deep);
+  --color-brand-light: var(--color-brand-light);
+  --color-ink: var(--color-ink);
+  --color-paper: var(--color-paper);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #000;
+  color: #fff;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+.prose-measure {
+  max-width: 65ch;
+}
+
+.bg-hero {
+  background-image: var(--gradient-hero);
+}
+
+.bg-hex-dots {
+  background-image: url("/art/hex-dots.svg");
+  background-size: 1400px auto;
+  background-repeat: repeat;
 }
