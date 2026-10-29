@@ -68,3 +68,35 @@ body {
   padding-left: 1.25rem;
   margin-top: 1em;
 }
+
+.prose-body h2 {
+  margin-top: 2em;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+.prose-body h3 {
+  margin-top: 1.5em;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #fff;
+}
+.prose-body h2 + p,
+.prose-body h3 + p,
+.prose-body h2 + ul,
+.prose-body h3 + ul {
+  margin-top: 0.75em;
+}
+.prose-body h2:first-child,
+.prose-body h3:first-child {
+  margin-top: 0;
+}
+.prose-body li + li {
+  margin-top: 0.5em;
+}
+.prose-body strong {
+  color: #fff;
+  font-weight: 600;
+}
