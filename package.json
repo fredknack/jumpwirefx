@@ -11,14 +11,17 @@
     "media": "tsx scripts/media.ts",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "db:seed": "tsx scripts/seed.ts"
+    "db:seed": "tsx scripts/seed.ts",
+    "admin:hash": "tsx scripts/admin-hash.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.2.0",
     "@next/third-parties": "^16.4.3",
     "@vercel/blob": "^2.8.2",
+    "bcryptjs": "^3.0.3",
     "drizzle-kit": "^0.31.11",
     "drizzle-orm": "^0.45.4",
+    "jose": "^6.2.13",
     "next": "16.4.3",
     "react": "19.3.0",
     "react-dom": "19.3.0",

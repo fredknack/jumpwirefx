@@ -33,3 +33,12 @@ to skip Blob.
 
 - `docs/superpowers/specs/` — design decisions
 - `docs/superpowers/plans/` — implementation plans
+
+## Admin (Phase 2)
+
+Content lives in Neon Postgres when `DATABASE_URL` is set; otherwise the site reads the seed files in `content/`.
+
+- `pnpm db:generate` – write a migration from `lib/db/schema.ts`; `pnpm db:migrate` applies it; `pnpm db:seed` loads `content/` into the database.
+- `pnpm admin:hash` – prompts for the admin password (hidden, never on the command line) and prints the bcrypt hash for `ADMIN_PASSWORD_HASH`.
+- `AUTH_SECRET` – 32+ random characters (`openssl rand -base64 32`) used to sign the `jw_admin` session cookie (7 days).
+- Sign in at `/admin/login`. Five wrong passwords from one IP block that IP for 15 minutes.
