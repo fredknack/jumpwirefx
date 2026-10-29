@@ -119,6 +119,7 @@ export function rowToService(row: ServiceRow): Service {
     body: row.body,
     heroImage: row.heroImage ?? undefined,
     projectSlugs: row.projectSlugs,
+    gallery: row.gallery,
     sortOrder: row.sortOrder,
     published: row.published,
   };

@@ -4,7 +4,7 @@ const ITEMS = [
   { title: "Custom hardware", body: "Circuit boards, lighting, buttons and sensors designed and built for the cabinet, not bolted on after." },
   { title: "Arduino and sensors", body: "Microcontrollers tie the physical parts to the screen so a coin, a button or a wave triggers the show." },
   { title: "On-screen experience", body: "Touch interfaces, synchronized video walls and animation built in Unity to run all day without a hiccup." },
-  { title: "Content and install", body: "Motion graphics, video editing and on-site setup, so the kiosk arrives finished and working." },
+  { title: "Remote content and analytics", body: "Clients change the media from any browser, and every tap and button press is logged to a dashboard they can open the next morning." },
 ];
 
 export function HowItsBuilt() {

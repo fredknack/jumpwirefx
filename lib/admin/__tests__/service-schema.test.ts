@@ -34,3 +34,19 @@ describe("formToServiceInput", () => {
     expect(formToServiceInput(fd)).toMatchObject({ slug: "lobby-installations", projectSlugs: ["one", "two"], heroImage: { url: "/h.jpg", alt: "Hero", width: 1600, height: 900 }, sortOrder: 20, published: true });
   });
 });
+
+describe("service gallery", () => {
+  test("formToServiceInput reads repeated gallery fields like projects do", () => {
+    const fd = new FormData();
+    fd.set("title", "T");
+    fd.set("slug", "t-page");
+    fd.set("galleryPresent", "1");
+    fd.append("galleryUrl", "/a.png"); fd.append("galleryAlt", "Dashboard"); fd.append("galleryWidth", "1600"); fd.append("galleryHeight", "900");
+    expect(formToServiceInput(fd).gallery).toEqual([{ url: "/a.png", alt: "Dashboard", width: 1600, height: 900 }]);
+  });
+
+  test("the schema requires alt text on gallery images", () => {
+    const r = serviceInputSchema.safeParse({ slug: "abc", title: "T", gallery: [{ url: "/a.png", alt: "" }] });
+    expect(r.success).toBe(false);
+  });
+});

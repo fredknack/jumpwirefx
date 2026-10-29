@@ -31,8 +31,13 @@ Already have a touchscreen or a cabinet? JumpWire can build the interactive soft
 
 - Content updates after the first show are part of the plan, so the same kiosk can carry a new campaign next season.
 - Lead capture can feed your CRM or a simple spreadsheet, whichever your team will actually use.
-- Loud, bright and physical beats subtle on a show floor. Expect to be told so.`,
+- Loud, bright and physical beats subtle on a show floor. Expect to be told so.
+
+## After launch
+
+Content on the kiosk is yours to change. Log in from any browser, swap a video, fix a price, add this show's promotion, and the kiosk updates itself, whether it's on your loading dock or on the floor in Las Vegas. Every tap and button press is logged, so the morning after the show you can see how many people engaged, what they chose and when the booth was busiest.`,
     projectSlugs: ["netflix-cowboy-bebop-vending-machine", "kaiser-permanente-health-quiz-kiosk", "interactive-ipad-portfolio"],
+    gallery: [],
     sortOrder: 10,
     published: true,
   },
@@ -62,8 +67,13 @@ Existing displays, an AV integrator already under contract, or a brand team that
 
 - Reliability work happens up front: watchdogs, automatic restarts and remote monitoring so a frozen screen never greets a visitor.
 - Content planning matters as much as the software. A timeline with twenty strong stories beats one with two hundred weak ones.
-- Maintenance visits and content refreshes can be scheduled, so the piece ages well.`,
+- Maintenance visits and content refreshes can be scheduled, so the piece ages well.
+
+## After launch
+
+The installation is edited by your team from any browser: new milestones, people, video and images go live without a developer or a site visit. Usage is logged, so you can see which stories visitors open most, when the lobby is busiest and whether a refresh changed anything.`,
     projectSlugs: ["interactive-corporate-timeline", "nyit-interactive-video-wall"],
+    gallery: [],
     sortOrder: 20,
     published: true,
   },
@@ -92,9 +102,70 @@ Walls are often sold by an AV integrator before anyone asks what will play on th
 ## Good to know
 
 - Bezels, aspect ratio and viewing distance drive the design; JumpWire will ask for the wall's exact layout before proposing content.
-- A wall can be interactive for one person and still broadcast to everyone else behind them. Designing for both is the interesting part.`,
+- A wall can be interactive for one person and still broadcast to everyone else behind them. Designing for both is the interesting part.
+
+## After launch
+
+Playlists and interactive content are managed remotely, so the wall can change for an event, a season or a visiting client without anyone touching the controller. Interaction data shows what people reach for and how long they stay, which is how the next round of content gets better.`,
     projectSlugs: ["nyit-interactive-video-wall", "interactive-corporate-timeline"],
+    gallery: [],
     sortOrder: 30,
+    published: true,
+  },
+  {
+    id: "s-remote-content-and-usage-data",
+    slug: "remote-content-and-usage-data",
+    title: "Remote content and usage data",
+    tagline: "Change what the kiosk says from your laptop, and know exactly how many people touched it.",
+    summary:
+      "Every JumpWire build includes a browser-based content editor and a usage dashboard: update video, images and text on a kiosk or installation from anywhere, and see taps, button presses and dwell time logged in the cloud, by hour and by event.",
+    body: `## The question your boss will ask
+
+Did the booth work? Most interactive builds can't answer that. JumpWire builds can: every kiosk and installation ships with remote content control and cloud usage logging, so you can change what it shows without a technician and prove what it did without guessing.
+
+## Update it from anywhere
+
+Log in from any browser, on the show floor or from the office, and edit the content the kiosk plays: videos, images, text, prices, the promotion for this particular show. The kiosk picks up the change within a minute. Schedule content ahead of time, keep a version per event, and roll back if a change doesn't land.
+
+*Screenshot placeholder: the content editor, with a kiosk's media list and a change being published.*
+
+## See what visitors did
+
+Every tap, button press and session is logged to the cloud as it happens. The dashboard shows how many people engaged, which screens and choices were most popular, how long people stayed, and how activity moved through the day. Compare one show to the next, export the numbers, and put a real figure in the post-show report.
+
+*Screenshot placeholder: the usage dashboard, with interactions by hour and the most-played content.*
+
+## What it is good for
+
+- **Proving ROI.** Interactions per day, by show, in a spreadsheet your marketing team can use.
+- **Tuning content.** If nobody opens the third option, change the third option before tomorrow.
+- **Running several units.** One login manages every kiosk in the fleet, each with its own content and its own numbers.
+- **Lead capture.** When the experience collects contact details, they land in the same dashboard, ready to export.
+
+## FAQ
+
+### Can we change the content ourselves?
+
+Yes. The editor is built for marketing teams, not developers: upload a video, type a headline, publish. JumpWire sets it up and shows your team how it works at handover.
+
+### What exactly is logged?
+
+Anonymous interaction events: which button or screen was touched, when, and how long a session lasted. No cameras, no faces, no personal data, unless the experience includes a lead-capture form that visitors fill in on purpose.
+
+### Who owns the data?
+
+You do. It is collected for your installation, visible only to your logins, and exportable at any time.
+
+### Does the kiosk need internet at the venue?
+
+For live updates and live data, yes, through venue Wi-Fi or a cellular hotspot. Without a connection the kiosk keeps running on its last content and uploads the logged data when it reconnects.
+
+### Does this cost extra?
+
+It is included with every JumpWire build. Hosting for the editor and dashboard is part of the ongoing support arrangement, agreed up front.`,
+    projectSlugs: ["interactive-corporate-timeline", "kaiser-permanente-health-quiz-kiosk", "netflix-cowboy-bebop-vending-machine"],
+    gallery: [],
+    sortOrder: 40,
     published: true,
   },
 ];

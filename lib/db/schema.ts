@@ -45,6 +45,7 @@ export const services = pgTable("services", {
   body: text("body").notNull().default(""),
   heroImage: jsonb("hero_image").$type<Media>(),
   projectSlugs: jsonb("project_slugs").$type<string[]>().notNull().default([]),
+  gallery: jsonb("gallery").$type<Media[]>().notNull().default([]),
   sortOrder: integer("sort_order").notNull().default(0),
   published: boolean("published").notNull().default(false),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),

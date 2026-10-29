@@ -15,6 +15,13 @@
       "when": 1793263795367,
       "tag": "0001_smooth_brother_voodoo",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793267144119,
+      "tag": "0002_perfect_silk_fever",
+      "breakpoints": true
     }
   ]
 }

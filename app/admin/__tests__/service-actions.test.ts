@@ -43,3 +43,18 @@ describe("service actions", () => {
     expect((await getServices()).map((s) => s.slug)).toEqual(["walls"]);
   });
 });
+
+describe("service gallery preservation", () => {
+  test("a form without the gallery editor keeps the stored gallery; with it, replaces", async () => {
+    const db = await createTestDb();
+    setContentDb(db);
+    const { upsertService } = await import("@/lib/db/queries");
+    const row = await upsertService(db, { slug: "gal-page", title: "G", tagline: "", summary: "", body: "", projectSlugs: [], gallery: [{ url: "/old.png", alt: "old" }], sortOrder: 1, published: true });
+    await saveServiceAction({}, form({ id: row.id, slug: "gal-page", title: "G2" }));
+    expect((await getServices())[0].gallery).toEqual([{ url: "/old.png", alt: "old" }]);
+    const fd = form({ id: row.id, slug: "gal-page", galleryPresent: "1" });
+    fd.append("galleryUrl", "/new.png"); fd.append("galleryAlt", "new"); fd.append("galleryWidth", ""); fd.append("galleryHeight", "");
+    await saveServiceAction({}, fd);
+    expect((await getServices())[0].gallery).toEqual([{ url: "/new.png", alt: "new", width: undefined, height: undefined }]);
+  });
+});

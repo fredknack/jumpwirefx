@@ -14,7 +14,7 @@ const withKey = (m: Media): Item => ({ ...m, key: `g${++seq}` });
  * remove, reorder. Emits repeated galleryUrl/Alt/Width/Height fields plus
  * galleryPresent so the action knows an empty list means "cleared".
  */
-export function GalleryField({ value, error }: { value: Media[]; error?: string }) {
+export function GalleryField({ value, error, label = "Gallery" }: { value: Media[]; error?: string; label?: string }) {
   const id = useId();
   const [items, setItems] = useState<Item[]>(() => value.map(withKey));
   const [busy, setBusy] = useState<string | null>(null);
@@ -50,9 +50,9 @@ export function GalleryField({ value, error }: { value: Media[]; error?: string 
 
   return (
     <fieldset className="rounded-lg border border-white/10 p-4">
-      <legend className="px-1 text-sm font-medium text-white/80">Gallery</legend>
+      <legend className="px-1 text-sm font-medium text-white/80">{label}</legend>
       <input type="hidden" name="galleryPresent" value="1" />
-      {items.length === 0 && <p className="text-sm text-white/50">No gallery images yet.</p>}
+      {items.length === 0 && <p className="text-sm text-white/50">No images yet.</p>}
       <ol className="space-y-3">
         {items.map((it, i) => {
           const label = it.alt || `image ${i + 1}`;

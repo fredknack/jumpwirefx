@@ -66,8 +66,10 @@ export async function saveServiceAction(_prev: ActionState, formData: FormData):
   const db = getContentDb();
   const taken = await findService(db, parsed.data.slug);
   if (taken && taken.id !== parsed.data.id) return { errors: { slug: "already in use" } };
+  const existing = parsed.data.id && !formHasGallery(formData) ? await findServiceById(db, parsed.data.id) : null;
+  const data = existing ? { ...parsed.data, gallery: existing.gallery } : parsed.data;
   try {
-    const row = await upsertService(db, parsed.data);
+    const row = await upsertService(db, data);
     updateTag("content");
     return { ok: true, id: row.id };
   } catch (e) {

@@ -1,3 +1,4 @@
+import { AfterLaunch } from "@/components/after-launch";
 import { ContactCta } from "@/components/contact-cta";
 import { Hero } from "@/components/hero";
 import { HowItsBuilt } from "@/components/how-its-built";
@@ -19,6 +20,7 @@ export default async function Home() {
       <ServiceCards services={services} />
       <ProjectGrid projects={gridProjects} />
       <HowItsBuilt />
+      <AfterLaunch href={services.some((s) => s.slug === "remote-content-and-usage-data") ? "/services/remote-content-and-usage-data" : null} />
       <ContactCta site={site} />
     </>
   );

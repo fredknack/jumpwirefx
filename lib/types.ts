@@ -56,6 +56,8 @@ export interface Service {
   heroImage?: Media;
   /** Related project slugs, in display order. */
   projectSlugs: string[];
+  /** Screenshots shown under the body. */
+  gallery: Media[];
   sortOrder: number;
   published: boolean;
 }

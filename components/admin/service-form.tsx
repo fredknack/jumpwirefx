@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useActionState, useEffect, useId, useState } from "react";
 import { saveServiceAction, type ActionState } from "@/app/admin/actions";
 import { Field, describedBy, inputClass } from "@/components/admin/field";
+import { GalleryField } from "@/components/admin/gallery-field";
 import { MediaField } from "@/components/admin/media-field";
 import { Markdown } from "@/components/markdown";
 import type { Service } from "@/lib/types";
@@ -58,6 +59,7 @@ export function ServiceForm({ service, projectOptions }: { service?: Service; pr
       </div>
 
       <MediaField name="heroImage" label="Hero image" accept="image/jpeg,image/png,image/webp" value={service?.heroImage} />
+      <GalleryField value={service?.gallery ?? []} error={e.gallery} label="Screenshots" />
 
       <fieldset className="rounded-lg border border-white/10 p-4">
         <legend className="px-1 text-sm font-medium text-white/80">Related work</legend>

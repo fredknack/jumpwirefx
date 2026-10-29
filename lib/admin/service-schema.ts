@@ -1,6 +1,13 @@
 import { z } from "zod";
-import { SLUG_RE, slugify } from "@/lib/admin/project-schema";
+import { SLUG_RE, formToGallery, slugify } from "@/lib/admin/project-schema";
 import type { ServiceInput } from "@/lib/db/queries";
+
+const media = z.object({
+  url: z.string().trim().min(1, "required"),
+  width: z.number().int().positive().optional(),
+  height: z.number().int().positive().optional(),
+  alt: z.string().trim().min(1, "alt text is required"),
+});
 
 const optionalMedia = z
   .object({ url: z.string().trim(), alt: z.string().trim(), width: z.number().optional(), height: z.number().optional() })
@@ -16,6 +23,7 @@ export const serviceInputSchema = z.object({
   body: z.string().default(""),
   heroImage: optionalMedia,
   projectSlugs: z.array(z.string().trim().min(1)).default([]),
+  gallery: z.array(media).default([]),
   sortOrder: z.number().int().default(0),
   published: z.boolean().default(false),
 });
@@ -36,6 +44,7 @@ export function formToServiceInput(fd: FormData): ServiceInput & { id?: string }
     body: String(fd.get("body") ?? ""),
     heroImage: heroUrl ? { url: heroUrl, alt: str(fd, "heroImageAlt"), width: num(fd, "heroImageWidth"), height: num(fd, "heroImageHeight") } : undefined,
     projectSlugs: fd.getAll("projectSlugs").map((v) => String(v).trim()).filter(Boolean),
+    gallery: formToGallery(fd),
     sortOrder: num(fd, "sortOrder") ?? 0,
     published: fd.get("published") === "on",
   };
