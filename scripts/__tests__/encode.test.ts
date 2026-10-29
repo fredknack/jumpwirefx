@@ -1,8 +1,8 @@
 import { describe, expect, test } from "vitest";
-import { mkdtempSync, utimesSync, writeFileSync } from "node:fs";
+import { existsSync, mkdtempSync, utimesSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
-import { ffmpegArgs, needsEncode, posterArgs } from "@/scripts/lib/encode";
+import { encode, ffmpegArgs, needsEncode, posterArgs } from "@/scripts/lib/encode";
 
 describe("ffmpegArgs", () => {
   const args = ffmpegArgs("in.mp4", "out.mp4");
@@ -59,5 +59,39 @@ describe("posterArgs", () => {
     expect(joined).toContain("-ss 12.5");
     expect(joined).toContain("-frames:v 1");
     expect(args[args.length - 1]).toBe("poster.jpg");
+  });
+});
+
+describe("encode", () => {
+  test("writes to a .part file and renames only after ffmpeg succeeds", () => {
+    const dir = mkdtempSync(path.join(tmpdir(), "enc-"));
+    const src = path.join(dir, "src.mp4");
+    const dst = path.join(dir, "dst.mp4");
+    writeFileSync(src, "x");
+    const seen: string[] = [];
+    encode(src, dst, (_cmd, args) => {
+      const out = args[args.length - 1];
+      seen.push(out);
+      writeFileSync(out, "encoded");
+    });
+    expect(seen[0]).not.toBe(dst);
+    expect(seen[0]).toMatch(/\.part\.mp4$/);
+    expect(existsSync(dst)).toBe(true);
+    expect(existsSync(seen[0])).toBe(false);
+  });
+
+  test("leaves no output behind when ffmpeg fails, so the next run re-encodes", () => {
+    const dir = mkdtempSync(path.join(tmpdir(), "enc-"));
+    const src = path.join(dir, "src.mp4");
+    const dst = path.join(dir, "dst.mp4");
+    writeFileSync(src, "x");
+    expect(() =>
+      encode(src, dst, (_cmd, args) => {
+        writeFileSync(args[args.length - 1], "trunc");
+        throw new Error("ffmpeg failed");
+      }),
+    ).toThrow(/ffmpeg failed/);
+    expect(existsSync(dst)).toBe(false);
+    expect(needsEncode(src, dst)).toBe(true);
   });
 });

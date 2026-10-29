@@ -49,8 +49,8 @@ export default async function ProjectPage({ params }: Params) {
         <p className="prose-measure mt-4 text-xl text-white/80 sm:text-2xl">{project.tagline}</p>
 
         <div className="mt-10">
-          <VideoThumb thumbnail={project.thumbnail} video={project.video} title={project.title} priority sizes="(min-width: 1152px) 1152px, 100vw" className="rounded-2xl" />
-          {project.video && <p className="mt-2 text-sm text-white/50">Tap to watch the case study video.</p>}
+          <VideoThumb thumbnail={project.thumbnail} video={project.video} title={project.title} linkable priority sizes="(min-width: 1152px) 1152px, 100vw" className="rounded-2xl" />
+          {project.video && <p className="mt-2 text-sm text-white/50">Tap to watch the case study video. Share this page with <code className="text-white/70">?video=1</code> to open it directly.</p>}
         </div>
 
         <div className="mt-12 grid gap-12 lg:grid-cols-[1fr_20rem]">

@@ -3,16 +3,17 @@
  * videos to Vercel Blob, and write content/media.json.
  *
  *   pnpm media              encode + thumbs + upload
- *   pnpm media --no-upload  encode + thumbs only (video left undefined)
+ *   pnpm media --no-upload  encode + thumbs only (existing video URLs are kept)
  *
  * Safe to re-run: encodes are skipped when the output is newer than the
  * source, and media.json is only written once every step has succeeded.
  */
 import { spawnSync } from "node:child_process";
-import { existsSync, mkdirSync, renameSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import sharp from "sharp";
-import { ffmpegArgs, needsEncode, posterArgs } from "./lib/encode";
+import { encode, needsEncode, posterArgs } from "./lib/encode";
+import { mergeMediaJson, type MediaEntry } from "./lib/media-json";
 import { uploadVideo } from "./lib/upload";
 import { projects } from "../content/projects";
 import type { Media } from "../lib/types";
@@ -47,7 +48,8 @@ async function main() {
     if (!process.env.BLOB_READ_WRITE_TOKEN) throw new Error("BLOB_READ_WRITE_TOKEN missing (use --no-upload to skip)");
   }
   mkdirSync(ENCODED, { recursive: true });
-  const results: Record<string, { video?: Media; thumbnail: Media }> = {};
+  const existing: Record<string, MediaEntry> = existsSync(OUT_JSON) ? JSON.parse(readFileSync(OUT_JSON, "utf8")) : {};
+  const results: Record<string, MediaEntry> = {};
 
   for (const p of projects) {
     const src = SOURCES[p.slug];
@@ -61,7 +63,7 @@ async function main() {
       encoded = path.join(ENCODED, `${p.slug}.mp4`);
       if (needsEncode(input, encoded)) {
         console.log(`encode ${p.slug}`);
-        run("ffmpeg", ffmpegArgs(input, encoded));
+        encode(input, encoded, run);
       } else {
         console.log(`encoded ${p.slug} (cached)`);
       }
@@ -88,10 +90,11 @@ async function main() {
     results[p.slug] = video ? { thumbnail, video } : { thumbnail };
   }
 
+  const merged = mergeMediaJson(existing, results);
   const tmp = OUT_JSON + ".tmp";
-  writeFileSync(tmp, JSON.stringify(results, null, 2) + "\n");
+  writeFileSync(tmp, JSON.stringify(merged, null, 2) + "\n");
   renameSync(tmp, OUT_JSON);
-  console.log(`wrote ${path.relative(ROOT, OUT_JSON)} (${Object.keys(results).length} entries)`);
+  console.log(`wrote ${path.relative(ROOT, OUT_JSON)} (${Object.keys(merged).length} entries)`);
 }
 
 main().catch((e) => { console.error(e.message ?? e); process.exit(1); });
