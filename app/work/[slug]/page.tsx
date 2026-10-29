@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
   const [project, site] = await Promise.all([getProject(slug), getSiteSettings()]);
   if (!project) return { title: "Not found" };
-  return projectMetadata(project, site);
+  return projectMetadata(project);
 }
 
 const KIND_LABEL = { kiosk: "Kiosk", installation: "Installation", game: "Game", experiment: "Experiment" } as const;

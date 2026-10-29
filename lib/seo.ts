@@ -4,7 +4,7 @@ import type { Project, SiteSettings } from "@/lib/types";
 
 const abs = (base: string, url: string) => (url.startsWith("http") ? url : `${base}${url}`);
 
-export function projectMetadata(p: Project, _site: SiteSettings): Metadata {
+export function projectMetadata(p: Project): Metadata {
   const title = p.title;
   const description = p.summary;
   return {

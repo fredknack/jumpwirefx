@@ -15,7 +15,7 @@ const project: Project = {
 
 describe("projectMetadata", () => {
   test("uses the project title, summary and thumbnail", () => {
-    const m = projectMetadata(project, site);
+    const m = projectMetadata(project);
     expect(m.title).toBe("Demo Kiosk");
     expect(m.description).toBe("A short summary.");
     const og = m.openGraph as { images: { url: string }[] };
@@ -58,7 +58,7 @@ describe("organizationJsonLd", () => {
 
 describe("brand", () => {
   test("metadata and structured data carry JumpWire, never the personal name", () => {
-    const m = projectMetadata(project, site);
+    const m = projectMetadata(project);
     expect((m.openGraph as { title: string }).title).toBe("Demo Kiosk | JumpWire");
     expect((m.openGraph as { siteName: string }).siteName).toBe("JumpWire");
     const ld = projectJsonLd(project, "https://example.com") as { author: { "@type": string; name: string } };
