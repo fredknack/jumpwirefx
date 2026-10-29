@@ -20,7 +20,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
-  const [project, site] = await Promise.all([getProject(slug), getSiteSettings()]);
+  const project = await getProject(slug);
   if (!project) return { title: "Not found" };
   return projectMetadata(project);
 }
