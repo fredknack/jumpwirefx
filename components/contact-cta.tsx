@@ -7,7 +7,7 @@ export function ContactCta({ site }: { site: SiteSettings }) {
     <section className="py-16 sm:py-24">
       <Container className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
         <div className="max-w-2xl">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Have a show or a lobby coming up?</h2>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Have a trade show coming up?</h2>
           <p className="mt-3 text-white/70">{site.aboutShort}</p>
         </div>
         <div className="flex flex-wrap gap-3">
