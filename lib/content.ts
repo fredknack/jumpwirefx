@@ -23,6 +23,13 @@ function liveDb(): DrizzleDb | null {
   return hasDatabase() ? getDb() : null;
 }
 
+/** Admin writes. Throws without a database: the CMS needs DATABASE_URL. */
+export function getContentDb(): DrizzleDb {
+  const db = liveDb();
+  if (!db) throw new Error("DATABASE_URL is not set; the admin needs a database");
+  return db;
+}
+
 export async function getProjects(opts: { includeUnpublished?: boolean } = {}): Promise<Project[]> {
   if (injected) return (await listProjects(injected, opts)).map(rowToProject);
   if (hasDatabase()) {
