@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/json-ld";
 import { Markdown } from "@/components/markdown";
 import { SkillList } from "@/components/skill-list";
 import { VideoThumb } from "@/components/video-thumb";
-import { getProject, getProjects, getSiteSettings } from "@/lib/content";
+import { getProject, getProjects } from "@/lib/content";
 import { projectJsonLd, projectMetadata } from "@/lib/seo";
 import { siteUrl } from "@/lib/site-url";
 
