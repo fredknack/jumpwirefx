@@ -127,13 +127,9 @@ Did the booth work? Most interactive builds can't answer that. JumpWire builds c
 
 Log in from any browser, on the show floor or from the office, and edit the content the kiosk plays: videos, images, text, prices, the promotion for this particular show. The kiosk picks up the change within a minute. Schedule content ahead of time, keep a version per event, and roll back if a change doesn't land.
 
-*Screenshot placeholder: the content editor, with a kiosk's media list and a change being published.*
-
 ## See what visitors did
 
 Every tap, button press and session is logged to the cloud as it happens. The dashboard shows how many people engaged, which screens and choices were most popular, how long people stayed, and how activity moved through the day. Compare one show to the next, export the numbers, and put a real figure in the post-show report.
-
-*Screenshot placeholder: the usage dashboard, with interactions by hour and the most-played content.*
 
 ## What it is good for
 

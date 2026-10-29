@@ -20,7 +20,7 @@ describe("services content switch", () => {
     }
     const remote = list.find((s) => s.slug === "remote-content-and-usage-data")!;
     expect(remote.body).toMatch(/## FAQ/);
-    expect(remote.body).toMatch(/Screenshot placeholder/);
+    expect(remote.body).not.toMatch(/placeholder/i);
     expect((await getService("trade-show-kiosks"))?.title).toBe("Trade show kiosks");
     expect(await getService("nope")).toBeNull();
   });
