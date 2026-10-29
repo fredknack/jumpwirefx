@@ -92,3 +92,21 @@ describe("admin server actions", () => {
     expect(s.socialLinks).toEqual([{ label: "LinkedIn", url: "https://linkedin.com/in/fred" }, { label: "GitHub", url: "https://github.com/fred" }]);
   });
 });
+
+describe("editing preserves data the form does not carry", () => {
+  test("gallery survives an edit from a form without gallery fields", async () => {
+    const db = await createTestDb();
+    setContentDb(db);
+    const { upsertProject } = await import("@/lib/db/queries");
+    const row = await upsertProject(db, {
+      slug: "gal", title: "Gal", tagline: "", kind: "kiosk", summary: "", body: "", built: [], skills: [],
+      thumbnail: { url: "/t.jpg", alt: "t", width: 1280, height: 720 }, gallery: [{ url: "/g1.jpg", alt: "g1" }], featured: false, sortOrder: 1, published: true,
+    });
+    const result = await saveProjectAction({}, projectForm({ id: row.id, slug: "gal", title: "Gal 2", thumbnailWidth: "1280", thumbnailHeight: "720" }));
+    expect(result.errors).toBeUndefined();
+    const [p] = await getProjects();
+    expect(p.title).toBe("Gal 2");
+    expect(p.gallery).toEqual([{ url: "/g1.jpg", alt: "g1" }]);
+    expect(p.thumbnail).toEqual({ url: "/t.jpg", alt: "t", width: 1280, height: 720 });
+  });
+});

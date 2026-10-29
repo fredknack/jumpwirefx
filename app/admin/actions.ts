@@ -17,8 +17,11 @@ export async function saveProjectAction(_prev: ActionState, formData: FormData):
   const db = getContentDb();
   const taken = await findProject(db, parsed.data.slug);
   if (taken && taken.id !== parsed.data.id) return { errors: { slug: "already in use" } };
+  // The form has no gallery editor yet; never let a save wipe an existing gallery.
+  const existing = parsed.data.id ? await findProjectById(db, parsed.data.id) : null;
+  const data = existing ? { ...parsed.data, gallery: existing.gallery } : parsed.data;
   try {
-    const row = await upsertProject(db, parsed.data);
+    const row = await upsertProject(db, data);
     updateTag("content");
     return { ok: true, id: row.id };
   } catch (e) {

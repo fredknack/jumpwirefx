@@ -21,3 +21,16 @@ describe("MediaField", () => {
     expect(vid.container.querySelector("video")).toHaveAttribute("preload", "metadata");
   });
 });
+
+describe("MediaField dimensions", () => {
+  test("carries width and height through hidden inputs so saves keep them", () => {
+    render(<MediaField name="thumbnail" label="Thumbnail" accept="image/*" value={{ url: "/a.jpg", alt: "a", width: 1280, height: 720 }} />);
+    expect(document.querySelector('input[name="thumbnailWidth"]')).toHaveValue("1280");
+    expect(document.querySelector('input[name="thumbnailHeight"]')).toHaveValue("720");
+  });
+
+  test("omits the dimension inputs when the value has none", () => {
+    render(<MediaField name="video" label="Video" accept="video/mp4" kind="video" value={{ url: "/v.mp4", alt: "v" }} />);
+    expect(document.querySelector('input[name="videoWidth"]')).toBeNull();
+  });
+});

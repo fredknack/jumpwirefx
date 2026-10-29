@@ -2,6 +2,7 @@
 
 import { upload } from "@vercel/blob/client";
 import { useId, useState } from "react";
+import type { Media } from "@/lib/types";
 
 type Props = {
   /** Form field prefix: produces `${name}Url` and `${name}Alt`. */
@@ -9,7 +10,7 @@ type Props = {
   label: string;
   accept: string;
   /** Initial value; the field owns its state afterwards. */
-  value?: { url: string; alt: string };
+  value?: Media;
   kind?: "image" | "video";
   required?: boolean;
 };
@@ -22,6 +23,8 @@ export function MediaField({ name, label, accept, value, kind = "image", require
   const id = useId();
   const [url, setUrl] = useState(value?.url ?? "");
   const [alt, setAlt] = useState(value?.alt ?? "");
+  // Known pixel size travels with the URL; a new upload has none until measured.
+  const [dims, setDims] = useState(value?.width && value?.height ? { width: value.width, height: value.height } : null);
   const [progress, setProgress] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -38,6 +41,7 @@ export function MediaField({ name, label, accept, value, kind = "image", require
         onUploadProgress: (p) => setProgress(p.percentage),
       });
       setUrl(blob.url);
+      setDims(null);
     } catch (e) {
       setError((e as Error).message);
     } finally {
@@ -76,8 +80,24 @@ export function MediaField({ name, label, accept, value, kind = "image", require
           )}
           <label className="block" htmlFor={`${id}-url`}>
             <span className="text-sm text-white/70">{label} URL</span>
-            <input id={`${id}-url`} name={`${name}Url`} value={url} onChange={(e) => setUrl(e.target.value)} required={required} className={input} />
+            <input
+              id={`${id}-url`}
+              name={`${name}Url`}
+              value={url}
+              onChange={(e) => {
+                setUrl(e.target.value);
+                setDims(null);
+              }}
+              required={required}
+              className={input}
+            />
           </label>
+          {dims && (
+            <>
+              <input type="hidden" name={`${name}Width`} value={dims.width} />
+              <input type="hidden" name={`${name}Height`} value={dims.height} />
+            </>
+          )}
           <label className="block" htmlFor={`${id}-alt`}>
             <span className="text-sm text-white/70">{label} alt text</span>
             <input id={`${id}-alt`} name={`${name}Alt`} value={alt} onChange={(e) => setAlt(e.target.value)} required={required} className={input} />
