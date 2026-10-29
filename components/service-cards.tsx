@@ -13,20 +13,31 @@ export function ServiceCards({ services }: { services: Service[] }) {
           <p className="mt-3 text-white/70">Pick the one closest to your project; each page explains what you get and shows the work behind it.</p>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
-          {services.map((s) => (
-            <article key={s.id} className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors hover:border-brand/60">
-              <h3 className="text-xl font-semibold tracking-tight">
-                <Link href={`/services/${s.slug}`} className="hover:text-brand">
-                  {s.title}
-                </Link>
-              </h3>
-              <p className="mt-2 text-sm font-medium text-brand-light">{s.tagline}</p>
-              <p className="mt-3 text-white/70">{s.summary}</p>
-              <Link href={`/services/${s.slug}`} aria-label={`${s.title}: learn more`} className="mt-auto pt-5 text-sm font-semibold text-brand hover:text-brand-light">
-                Learn more →
-              </Link>
-            </article>
-          ))}
+          {services.map((s, i) => {
+            // A lone card in the last row stretches across the grid instead of sitting in one corner.
+            const wide = services.length % 3 === 1 && i === services.length - 1;
+            return (
+              <article
+                key={s.id}
+                className={`flex rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors hover:border-brand/60 ${wide ? "flex-col gap-4 md:col-span-3 md:grid md:grid-cols-[1fr_2fr] md:items-start md:gap-10" : "flex-col"}`}
+              >
+                <div>
+                  <h3 className="text-xl font-semibold tracking-tight">
+                    <Link href={`/services/${s.slug}`} className="hover:text-brand">
+                      {s.title}
+                    </Link>
+                  </h3>
+                  <p className="mt-2 text-sm font-medium text-brand-light">{s.tagline}</p>
+                </div>
+                <div className={wide ? "flex flex-col" : "flex flex-1 flex-col"}>
+                  <p className={wide ? "text-white/70" : "mt-3 text-white/70"}>{s.summary}</p>
+                  <Link href={`/services/${s.slug}`} aria-label={`${s.title}: learn more`} className="mt-auto pt-5 text-sm font-semibold text-brand hover:text-brand-light">
+                    Learn more →
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </Container>
     </section>

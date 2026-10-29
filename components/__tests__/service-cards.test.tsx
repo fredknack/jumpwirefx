@@ -18,3 +18,18 @@ describe("ServiceCards", () => {
     expect(container.innerHTML).toBe("");
   });
 });
+
+describe("ServiceCards layout", () => {
+  test("a lone card in the last row spans all three columns", () => {
+    render(<ServiceCards services={services} />);
+    const cards = document.querySelectorAll("article");
+    expect(cards).toHaveLength(4);
+    expect(cards[3].className).toMatch(/md:col-span-3/);
+    expect(cards[0].className).not.toMatch(/md:col-span-3/);
+  });
+
+  test("a full row needs no spanning card", () => {
+    render(<ServiceCards services={services.slice(0, 3)} />);
+    for (const c of document.querySelectorAll("article")) expect(c.className).not.toMatch(/md:col-span-3/);
+  });
+});
