@@ -201,7 +201,7 @@ The quiz, the timed exercise rounds and the receipt printer all run from one app
     client: "Planar",
     kind: "installation",
     summary:
-      "Since 2016 JumpWire has produced content for Planar's LED video walls: motion graphics and video built for the exact pixel dimensions of each wall, from showroom and trade show demos to touch-enabled installations.",
+      "Since 2015 JumpWire has produced content for Planar's LED video walls: motion graphics and video built for the exact pixel dimensions of each wall, from showroom and trade show demos to touch-enabled installations.",
     body: `Planar builds some of the largest LED video walls in the world, and a wall is only as impressive as what plays on it. JumpWire has produced that content for ten years: motion graphics and video designed for each wall's exact resolution and pixel pitch, so it looks right from across the room and up close.
 
 Some of the walls are touch-enabled, which brings the same interaction work as a kiosk, at a scale where one person touching the wall is also a show for everyone behind them.`,
