@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
 import { Suspense } from "react";
-import { hasSession } from "@/lib/auth/session";
 import { LoginForm } from "./login-form";
 
 export const metadata: Metadata = { title: "Admin login", robots: { index: false, follow: false } };
 
 async function FormWithNext({ searchParams }: { searchParams: Promise<{ next?: string }> }) {
   const { next } = await searchParams;
-  if (await hasSession()) redirect(next && next.startsWith("/admin") ? next : "/admin");
   return <LoginForm next={next ?? "/admin"} />;
 }
 

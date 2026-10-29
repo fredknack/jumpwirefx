@@ -48,4 +48,15 @@ describe("proxy guards /admin (Review Focus 2)", () => {
     const res = await proxy(req("/admin/login"));
     expect(res.status).toBe(200);
   });
+
+  test("/admin/login with a valid cookie redirects to the admin (or a safe next=)", async () => {
+    const token = await createSessionToken();
+    const res = await proxy(req("/admin/login", token));
+    expect(res.status).toBe(307);
+    expect(res.headers.get("location")).toBe("http://localhost:3000/admin");
+    const res2 = await proxy(req("/admin/login?next=%2Fadmin%2Fsettings", token));
+    expect(res2.headers.get("location")).toBe("http://localhost:3000/admin/settings");
+    const res3 = await proxy(req("/admin/login?next=https%3A%2F%2Fevil.example", token));
+    expect(res3.headers.get("location")).toBe("http://localhost:3000/admin");
+  });
 });
