@@ -6,7 +6,7 @@ export const site: SiteSettings = {
   intro:
     "JumpWire designs and builds interactive kiosks for trade shows and corporate lobbies. Big touchscreens, LED lighting, physical buttons and sensors, all driven by custom software so people stop, play and remember your brand. The whole build happens in Portland, Oregon: circuit boards and Arduino control, the on-screen experience in Unity, motion graphics and installation on site.",
   aboutShort:
-    "JumpWire has built interactive media for trade shows, lobbies and events for more than a decade. One studio handles the hardware, the software and the content, so nothing gets lost between the circuit board and the screen.",
+    "JumpWire has built interactive media for trade shows, lobbies and events for more than a decade. Hardware, software and content can all come from one shop, so nothing gets lost between the circuit board and the screen. Or bring what you already have: a touchscreen that needs interactive programming, or video and graphics from your own team, and JumpWire builds the rest around it.",
   email: "fred@jumpwirefx.com",
   location: "Portland, Oregon",
   socialLinks: [],

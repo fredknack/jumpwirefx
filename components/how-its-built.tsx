@@ -12,9 +12,9 @@ export function HowItsBuilt() {
     <section className="border-y border-white/10 bg-white/[0.02] py-16 sm:py-24">
       <Container>
         <div className="max-w-2xl">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Built end to end under one roof</h2>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">The whole build, or just the part you need</h2>
           <p className="mt-3 text-white/70">
-            No hand-offs between an electronics shop, a software team and a content studio. JumpWire owns the whole build.
+            Electronics, software and content can all come from one place, with no hand-offs between an electronics shop, a software team and a content studio. Already have a touchscreen, or a team that makes your video and graphics? JumpWire fits around them and handles the rest.
           </p>
         </div>
         <ul className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
