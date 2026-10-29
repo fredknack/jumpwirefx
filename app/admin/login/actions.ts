@@ -12,6 +12,8 @@ function safeNext(next: unknown): string {
 }
 
 export async function loginAction(_prev: LoginState, formData: FormData): Promise<LoginState> {
+  // Vercel overwrites x-forwarded-for with the real client IP. On any other host this
+  // header is attacker-controlled and the limiter must key on something else.
   const ip = (await headers()).get("x-forwarded-for")?.split(",")[0]?.trim() || "local";
   if (!loginLimiter.check(ip).allowed) return { error: "Too many attempts. Try again in 15 minutes." };
 

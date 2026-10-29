@@ -5,7 +5,9 @@ import { saveSettingsAction, type ActionState } from "@/app/admin/actions";
 import { Field, describedBy, inputClass } from "@/components/admin/field";
 import type { SiteSettings } from "@/lib/types";
 
-export function SettingsForm({ settings }: { settings: SiteSettings }) {
+type ReelOption = { slug: string; title: string };
+
+export function SettingsForm({ settings, reelOptions = [] }: { settings: SiteSettings; reelOptions?: ReelOption[] }) {
   const id = useId();
   const [state, action, pending] = useActionState<ActionState, FormData>(saveSettingsAction, {});
   const e = state.errors ?? {};
@@ -30,7 +32,16 @@ export function SettingsForm({ settings }: { settings: SiteSettings }) {
       {text("aboutShort", "About (short)", 4)}
       {text("email", "Contact email")}
       {text("location", "Location")}
-      {text("heroReelSlug", "Hero reel project slug", undefined, "Slug of the project whose video plays on the home page")}
+      <Field id={`${id}-reel`} label="Hero reel" error={e.heroReelSlug} hint="Project whose video plays on the home page">
+        <select id={`${id}-reel`} name="heroReelSlug" defaultValue={settings.heroReelSlug} className={inputClass}>
+          <option value="">None</option>
+          {reelOptions.map((o) => (
+            <option key={o.slug} value={o.slug}>
+              {o.title}
+            </option>
+          ))}
+        </select>
+      </Field>
       <Field id={`${id}-social`} label="Social links" error={e.socialLinks} hint='One per line: "Label https://url"'>
         <textarea id={`${id}-social`} name="socialLinks" rows={4} defaultValue={settings.socialLinks.map((l) => `${l.label} ${l.url}`).join("\n")} className={inputClass} />
       </Field>

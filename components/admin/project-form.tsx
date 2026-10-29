@@ -18,7 +18,9 @@ export function ProjectForm({ project }: { project?: Project }) {
   const e = state.errors ?? {};
 
   useEffect(() => {
-    if (state.ok && state.id && !project) router.replace(`/admin/projects/${state.id}`);
+    if (!state.ok) return;
+    if (project) router.refresh();
+    else if (state.id) router.replace(`/admin/projects/${state.id}`);
   }, [state.ok, state.id, project, router]);
 
   return (

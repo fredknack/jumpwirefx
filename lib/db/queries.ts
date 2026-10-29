@@ -1,4 +1,4 @@
-import { asc, eq, sql } from "drizzle-orm";
+import { asc, eq, inArray, sql } from "drizzle-orm";
 import type { DrizzleDb } from "./client";
 import { projects, siteSettings, type ProjectRow, type SiteSettingsRow } from "./schema";
 import type { Project, SiteSettings } from "@/lib/types";
@@ -40,11 +40,14 @@ export async function deleteProject(db: DrizzleDb, id: string): Promise<void> {
   await db.delete(projects).where(eq(projects.id, id));
 }
 
-/** Set sortOrder = position * 10 for each id in order. */
+/** Set sortOrder = position * 10 for each id in order, in one statement (neon-http has no transactions). */
 export async function reorderProjects(db: DrizzleDb, ids: string[]): Promise<void> {
-  for (const [i, id] of ids.entries()) {
-    await db.update(projects).set({ sortOrder: (i + 1) * 10, updatedAt: new Date() }).where(eq(projects.id, id));
-  }
+  if (ids.length === 0) return;
+  const cases = sql.join(ids.map((id, i) => sql`when ${id}::uuid then ${(i + 1) * 10}`), sql` `);
+  await db
+    .update(projects)
+    .set({ sortOrder: sql`case ${projects.id} ${cases} else ${projects.sortOrder} end`, updatedAt: new Date() })
+    .where(inArray(projects.id, ids));
 }
 
 export async function getSettings(db: DrizzleDb): Promise<SiteSettingsRow | null> {

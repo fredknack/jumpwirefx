@@ -8,8 +8,12 @@ const PATH_RE = /^uploads\/(thumbnails|videos)\/[A-Za-z0-9._-]+$/;
 
 /** Mints short-lived client upload tokens for the admin (browser → Blob, bypassing the 4.5 MB body limit). */
 export async function POST(request: Request) {
-  if (!(await hasSession())) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   const body = (await request.json()) as HandleUploadBody;
+  // Token minting needs the admin session. Blob's upload-completed webhook has no
+  // cookie; handleUpload verifies its x-vercel-signature instead.
+  if (body.type === "blob.generate-client-token" && !(await hasSession())) {
+    return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  }
   try {
     const json = await handleUpload({
       body,

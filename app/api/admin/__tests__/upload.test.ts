@@ -47,3 +47,13 @@ describe("POST /api/admin/upload", () => {
     await expect(captured!.onBeforeGenerateToken("uploads/../x", null, false)).rejects.toThrow();
   });
 });
+
+describe("Blob's upload-completed webhook", () => {
+  test("reaches handleUpload without a session so its signature check runs", async () => {
+    hasSession.mockResolvedValueOnce(false);
+    const webhook = { type: "blob.upload-completed", payload: { blob: { url: "https://x/u.jpg", pathname: "uploads/thumbnails/u.jpg" }, tokenPayload: null } };
+    const res = await POST(new Request("http://localhost/api/admin/upload", { method: "POST", body: JSON.stringify(webhook), headers: { "content-type": "application/json" } }));
+    expect(res.status).not.toBe(401);
+    expect(handleUpload).toHaveBeenCalledTimes(1);
+  });
+});

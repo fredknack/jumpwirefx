@@ -38,6 +38,7 @@ export function MediaField({ name, label, accept, value, kind = "image", require
       const blob = await upload(`uploads/${folder}/${safe}`, file, {
         access: "public",
         handleUploadUrl: "/api/admin/upload",
+        multipart: kind === "video",
         onUploadProgress: (p) => setProgress(p.percentage),
       });
       setUrl(blob.url);

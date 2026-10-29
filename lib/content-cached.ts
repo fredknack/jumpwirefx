@@ -1,6 +1,6 @@
-import { cacheTag } from "next/cache";
+import { cacheLife, cacheTag } from "next/cache";
 import { getDb } from "@/lib/db/client";
-import { findProject, getSettings, listProjects, rowToProject, rowToSettings } from "@/lib/db/queries";
+import { getSettings, listProjects, rowToProject, rowToSettings } from "@/lib/db/queries";
 import type { Project, SiteSettings } from "@/lib/types";
 
 /**
@@ -10,19 +10,20 @@ import type { Project, SiteSettings } from "@/lib/types";
  */
 export async function cachedPublishedProjects(): Promise<Project[]> {
   "use cache";
+  cacheLife("max");
   cacheTag("content");
   return (await listProjects(getDb(), {})).map(rowToProject);
 }
 
+/** Resolved from the cached list so unknown slugs never create cache entries or queries. */
 export async function cachedProject(slug: string): Promise<Project | null> {
-  "use cache";
-  cacheTag("content");
-  const row = await findProject(getDb(), slug);
-  return row && row.published ? rowToProject(row) : null;
+  const projects = await cachedPublishedProjects();
+  return projects.find((p) => p.slug === slug) ?? null;
 }
 
 export async function cachedSettings(): Promise<SiteSettings | null> {
   "use cache";
+  cacheLife("max");
   cacheTag("content");
   const row = await getSettings(getDb());
   return row ? rowToSettings(row) : null;

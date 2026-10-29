@@ -1,10 +1,12 @@
 import { connection } from "next/server";
 import { Suspense } from "react";
 import { ProjectList } from "@/components/admin/project-list";
+import { requireSession } from "@/lib/auth/session";
 import { getProjects } from "@/lib/content";
 
 async function Projects() {
   await connection();
+  await requireSession();
   const projects = await getProjects({ includeUnpublished: true });
   return <ProjectList projects={projects} />;
 }

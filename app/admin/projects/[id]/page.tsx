@@ -3,10 +3,12 @@ import { connection } from "next/server";
 import { Suspense } from "react";
 import { DeleteProjectForm } from "@/components/admin/delete-project-form";
 import { ProjectForm } from "@/components/admin/project-form";
+import { requireSession } from "@/lib/auth/session";
 import { getProjectById } from "@/lib/content";
 
 async function Editor({ params }: { params: Promise<{ id: string }> }) {
   await connection();
+  await requireSession();
   const { id } = await params;
   const project = await getProjectById(id);
   if (!project) notFound();

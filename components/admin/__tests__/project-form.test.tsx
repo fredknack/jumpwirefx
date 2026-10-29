@@ -5,7 +5,8 @@ import type { Project } from "@/lib/types";
 
 const saveProjectAction = vi.fn(async () => ({ errors: { slug: "already in use" } }));
 vi.mock("@/app/admin/actions", () => ({ saveProjectAction: (...a: unknown[]) => saveProjectAction(...(a as [])) }));
-vi.mock("next/navigation", () => ({ useRouter: () => ({ replace: vi.fn(), refresh: vi.fn(), push: vi.fn() }) }));
+const refresh = vi.fn();
+vi.mock("next/navigation", () => ({ useRouter: () => ({ replace: vi.fn(), refresh, push: vi.fn() }) }));
 
 import { ProjectForm } from "@/components/admin/project-form";
 
@@ -52,5 +53,16 @@ describe("ProjectForm", () => {
     expect(await screen.findByText("already in use")).toBeInTheDocument();
     expect(screen.getByLabelText(/^slug/i)).toHaveAccessibleDescription(/already in use/);
     expect(saveProjectAction).toHaveBeenCalled();
+  });
+});
+
+describe("ProjectForm after a successful edit", () => {
+  test("refreshes the route so sibling forms see the new slug", async () => {
+    const user = userEvent.setup();
+    saveProjectAction.mockResolvedValueOnce({ ok: true, id: project.id } as never);
+    render(<ProjectForm project={project} />);
+    await user.click(screen.getByRole("button", { name: /save/i }));
+    await screen.findByText("Saved.");
+    expect(refresh).toHaveBeenCalled();
   });
 });
