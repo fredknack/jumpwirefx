@@ -10,7 +10,7 @@ describe("services content switch", () => {
 
   test("without a database the seed services are returned in order and look like real pages", async () => {
     const list = await getServices();
-    expect(list.map((s) => s.slug)).toEqual(["trade-show-kiosks", "lobby-installations", "large-format-interactive-displays", "remote-content-and-usage-data"]);
+    expect(list.map((s) => s.slug)).toEqual(["trade-show-kiosks", "lobby-installations", "large-format-displays-and-led-video-walls", "remote-content-and-usage-data"]);
     for (const s of list) {
       expect(s.summary.split(/\s+/).length).toBeGreaterThan(20);
       expect(s.body.length).toBeGreaterThan(400);

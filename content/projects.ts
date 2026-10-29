@@ -193,6 +193,31 @@ The quiz, the timed exercise rounds and the receipt printer all run from one app
     published: true,
     archived: false,
   },
+  {
+    id: "p-planar",
+    slug: "planar-led-video-wall-content",
+    title: "Planar LED Video Wall Content",
+    tagline: "Ten years of media for one of the world's leading LED video wall makers.",
+    client: "Planar",
+    kind: "installation",
+    summary:
+      "Since 2016 JumpWire has produced content for Planar's LED video walls: motion graphics and video built for the exact pixel dimensions of each wall, from showroom and trade show demos to touch-enabled installations.",
+    body: `Planar builds some of the largest LED video walls in the world, and a wall is only as impressive as what plays on it. JumpWire has produced that content for ten years: motion graphics and video designed for each wall's exact resolution and pixel pitch, so it looks right from across the room and up close.
+
+Some of the walls are touch-enabled, which brings the same interaction work as a kiosk, at a scale where one person touching the wall is also a show for everyone behind them.`,
+    built: [
+      "Motion graphics and video mastered to each wall's exact pixel dimensions",
+      "Content for showroom, trade show and touch-enabled LED walls",
+      "A ten-year working relationship with Planar's team",
+    ],
+    skills: ["Motion graphics", "Video", "LED video walls", "Touch interaction"],
+    thumbnail: thumb("planar-led-video-wall-content", "Placeholder for Planar LED video wall content"),
+    gallery: [],
+    featured: false,
+    sortOrder: 15,
+    published: false,
+    archived: false,
+  },
 ];
 
 export const projects: Project[] = seed.map((p) => {

@@ -78,15 +78,17 @@ The installation is edited by your team from any browser: new milestones, people
     published: true,
   },
   {
-    id: "s-large-format-interactive-displays",
-    slug: "large-format-interactive-displays",
-    title: "Large-format interactive displays",
-    tagline: "Touch, sensors and physical controls on screens big enough to pull a crowd.",
+    id: "s-large-format-displays-and-led-video-walls",
+    slug: "large-format-displays-and-led-video-walls",
+    title: "Large-format displays and LED video walls",
+    tagline: "Content and interaction for screens and LED walls big enough to pull a crowd.",
     summary:
-      "Interactive experiences for large-format displays: touch, motion sensors and physical controls on 80-inch-plus screens and LED walls, with content built for the size, an ambient loop when idle, and interaction that works for a crowd as well as one visitor.",
+      "Content and interactive experiences for large-format displays and LED video walls, including touch-enabled walls: media built for the exact size and pixel pitch, touch and sensor interaction, an ambient loop when idle, and ten years of content production for Planar's LED walls behind it.",
     body: `## Bigger than a kiosk
 
-Interactive displays now come at sizes that used to need a wall of screens: a single 86-inch touch display, a run of them, or an LED wall. At that size the interaction has to work for the person touching it and for everyone watching from behind. JumpWire designs for both.
+Large-format displays and LED video walls can be any size a room allows, and some of them are touch-enabled. At that scale the content has to be built for the exact pixel dimensions, and the interaction has to work for the person touching it and for everyone watching from behind. JumpWire designs for both.
+
+JumpWire has produced content for Planar's LED video walls for ten years, so pixel pitch, brightness, bezels and controller quirks are familiar ground.
 
 ## What JumpWire delivers
 
@@ -107,7 +109,7 @@ Playlists and interactive content are managed remotely, so the display can chang
 
 - Screen size, aspect ratio and viewing distance drive the design; JumpWire will ask for the exact display and room before proposing content.
 - A display can be interactive for one person and still broadcast to everyone behind them. Designing for both is the interesting part.`,
-    projectSlugs: ["nyit-interactive-video-wall", "interactive-corporate-timeline"],
+    projectSlugs: ["planar-led-video-wall-content", "nyit-interactive-video-wall", "interactive-corporate-timeline"],
     gallery: [],
     sortOrder: 30,
     published: true,
