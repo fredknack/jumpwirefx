@@ -28,7 +28,7 @@ describe("ProjectForm", () => {
     expect(screen.getByLabelText(/kind/i)).toHaveValue("installation");
     expect(screen.getByLabelText(/summary/i)).toHaveValue("Summary text");
     expect(screen.getByLabelText(/^body/i)).toHaveValue("## Body\n\nText");
-    expect(screen.getByLabelText(/what i built/i)).toHaveValue("LED strips\nButtons");
+    expect(screen.getByLabelText(/what we built/i)).toHaveValue("LED strips\nButtons");
     expect(screen.getByLabelText(/skills/i)).toHaveValue("Unity\nArduino");
     expect(screen.getByLabelText(/thumbnail url/i)).toHaveValue("/media/demo-kiosk/thumb.jpg");
     expect(screen.getByLabelText(/video url/i)).toHaveValue("https://x/v.mp4");

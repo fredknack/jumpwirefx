@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/container";
+import { SITE_NAME } from "@/lib/brand";
 
 export function SiteHeader() {
   return (
@@ -8,7 +9,7 @@ export function SiteHeader() {
       <Container className="flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
           <Image src="/art/logo.svg" alt="" width={32} height={34} className="h-8 w-auto" priority />
-          <span className="text-base font-semibold tracking-tight">Fred Knack</span>
+          <span className="text-base font-semibold tracking-tight">{SITE_NAME}</span>
           <span className="hidden text-sm text-white/60 sm:inline">Interactive kiosks</span>
         </Link>
         <nav aria-label="Primary" className="flex items-center gap-6 text-sm font-medium">

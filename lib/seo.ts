@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { SITE_NAME } from "@/lib/brand";
 import type { Project, SiteSettings } from "@/lib/types";
 
 const abs = (base: string, url: string) => (url.startsWith("http") ? url : `${base}${url}`);
 
-export function projectMetadata(p: Project, site: SiteSettings): Metadata {
+export function projectMetadata(p: Project, _site: SiteSettings): Metadata {
   const title = p.title;
   const description = p.summary;
   return {
@@ -11,13 +12,13 @@ export function projectMetadata(p: Project, site: SiteSettings): Metadata {
     description,
     alternates: { canonical: `/work/${p.slug}` },
     openGraph: {
-      title: `${title} | Fred Knack`,
+      title: `${title} | ${SITE_NAME}`,
       description,
       type: "article",
       url: `/work/${p.slug}`,
       images: [{ url: p.thumbnail.url, width: p.thumbnail.width, height: p.thumbnail.height, alt: p.thumbnail.alt }],
       locale: "en_US",
-      siteName: `Fred Knack · ${site.location}`,
+      siteName: SITE_NAME,
     },
     twitter: { card: "summary_large_image", title, description, images: [p.thumbnail.url] },
   };
@@ -35,7 +36,7 @@ export function projectJsonLd(p: Project, siteUrl: string): object {
     url,
     image: thumbnailUrl,
     keywords: p.skills.join(", "),
-    author: { "@type": "Person", name: "Fred Knack", url: siteUrl },
+    author: { "@type": "Organization", name: SITE_NAME, url: siteUrl },
   };
   if (p.client) ld.sourceOrganization = { "@type": "Organization", name: p.client };
   if (p.year) ld.dateCreated = String(p.year);
@@ -52,14 +53,14 @@ export function projectJsonLd(p: Project, siteUrl: string): object {
   return ld;
 }
 
-export function personJsonLd(site: SiteSettings, siteUrl: string): object {
+export function organizationJsonLd(site: SiteSettings, siteUrl: string): object {
   return {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Fred Knack",
+    "@type": "Organization",
+    name: SITE_NAME,
     url: siteUrl,
+    logo: `${siteUrl}/art/logo.svg`,
     email: site.email,
-    jobTitle: "Interactive kiosk designer and builder",
     description: site.intro,
     address: { "@type": "PostalAddress", addressLocality: "Portland", addressRegion: "OR", addressCountry: "US" },
     knowsAbout: ["Interactive kiosks", "Trade show installations", "Arduino", "Unity", "LED lighting", "Touchscreen interfaces"],

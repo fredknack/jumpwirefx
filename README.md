@@ -1,6 +1,6 @@
 # jumpwirefx.com
 
-Portfolio site for Fred Knack's interactive kiosk business, built with Next.js and deployed on Vercel.
+Site for JumpWire, an interactive kiosk studio in Portland, Oregon, built with Next.js and deployed on Vercel.
 
 ## Develop
 

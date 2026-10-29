@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { personJsonLd, projectJsonLd, projectMetadata } from "@/lib/seo";
+import { organizationJsonLd, projectJsonLd, projectMetadata } from "@/lib/seo";
 import type { Project, SiteSettings } from "@/lib/types";
 
 const site: SiteSettings = {
@@ -43,11 +43,26 @@ describe("projectJsonLd", () => {
   });
 });
 
-describe("personJsonLd", () => {
-  test("describes Fred with the site url and location", () => {
-    const ld = personJsonLd(site, "https://example.com") as Record<string, unknown>;
-    expect(ld["@type"]).toBe("Person");
+describe("organizationJsonLd", () => {
+  test("describes JumpWire as the business with the site url, email and Portland address", () => {
+    const ld = organizationJsonLd(site, "https://example.com") as Record<string, unknown>;
+    expect(ld["@type"]).toBe("Organization");
+    expect(ld.name).toBe("JumpWire");
     expect(ld.url).toBe("https://example.com");
     expect(ld.email).toBe("fred@example.com");
+    expect(ld.logo).toBe("https://example.com/art/logo.svg");
+    expect((ld.address as { addressLocality: string }).addressLocality).toBe("Portland");
+    expect(JSON.stringify(ld)).not.toMatch(/fred knack/i);
+  });
+});
+
+describe("brand", () => {
+  test("metadata and structured data carry JumpWire, never the personal name", () => {
+    const m = projectMetadata(project, site);
+    expect((m.openGraph as { title: string }).title).toBe("Demo Kiosk | JumpWire");
+    expect((m.openGraph as { siteName: string }).siteName).toBe("JumpWire");
+    const ld = projectJsonLd(project, "https://example.com") as { author: { "@type": string; name: string } };
+    expect(ld.author).toEqual({ "@type": "Organization", name: "JumpWire", url: "https://example.com" });
+    expect(JSON.stringify([m, ld])).not.toMatch(/fred knack/i);
   });
 });

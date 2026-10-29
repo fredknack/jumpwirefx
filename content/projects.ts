@@ -47,7 +47,7 @@ The content lives in the cloud and the client's team edits it through a custom c
       "For the Cowboy Bebop reboot at ComplexCon 2021, Netflix needed a vending machine that felt like the series. Fans inserted Woolong coins, four screens and LED light boxes fired a 15-second synchronized animation, and the machine dispensed gifts and event tickets.",
     body: `Woolong is the currency in Cowboy Bebop, so the machine only takes Woolong coins. Drop one in and four displays, a bank of LED light boxes and the soundtrack all fire together for fifteen seconds before the prize drops.
 
-I built the on-screen visuals, programmed the link between the screens and the Arduino that runs the lights and the vending mechanism, and timed the lighting to the music.`,
+We built the on-screen visuals, programmed the link between the screens and the Arduino that runs the lights and the vending mechanism, and timed the lighting to the music.`,
     built: [
       "Four-screen animation synced to music and LED light boxes",
       "Arduino control of lighting and the vending mechanism",
@@ -68,7 +68,7 @@ I built the on-screen visuals, programmed the link between the screens and the A
     client: "New York Institute of Technology",
     kind: "installation",
     summary:
-      "NYIT installed a nine-display interactive wall and needed content worth touching. I designed the interface, produced the motion graphics and programmed the whole experience so visitors can browse text, images and video about the school. An ambient 3D loop takes over when nobody is interacting.",
+      "NYIT installed a nine-display interactive wall and needed content worth touching. We designed the interface, produced the motion graphics and programmed the whole experience so visitors can browse text, images and video about the school. An ambient 3D loop takes over when nobody is interacting.",
     body: `The wall had to work for a first-time visitor with no instructions. The interface uses big targets, clear sections and short reads, with video and motion graphics doing most of the talking.
 
 When the wall is idle it drops into an ambient loop that mixes 2D graphics with 3D objects, which draws people over from across the lobby.`,
@@ -93,7 +93,7 @@ When the wall is idle it drops into an ambient loop that mixes 2D graphics with 
     kind: "kiosk",
     summary:
       "A touchscreen health quiz for Kaiser Permanente events. Miss a question and the kiosk challenges you to hit big lit buttons as they flash around the cabinet. Finish the quiz and the exercises and it prints a coupon.",
-    body: `This one is as much hardware as software. I designed the circuit board that drives the 12V button lights and the rest of the cabinet electronics in Autodesk Eagle, had it fabricated, and soldered it up. The oversized acrylic buttons were laser cut and use capacitive touch sensing, so there are no moving parts to wear out on a show floor.
+    body: `This one is as much hardware as software. We designed the circuit board that drives the 12V button lights and the rest of the cabinet electronics in Autodesk Eagle, had it fabricated, and soldered it up. The oversized acrylic buttons were laser cut and use capacitive touch sensing, so there are no moving parts to wear out on a show floor.
 
 The quiz, the timed exercise rounds and the receipt printer all run from one application.`,
     built: [
@@ -115,7 +115,7 @@ The quiz, the timed exercise rounds and the receipt printer all run from one app
     tagline: "A touch portfolio that shows the work and the craft at once.",
     kind: "kiosk",
     summary:
-      "An iPad app for browsing my motion graphics, video editing and 3D work. The interface is the demo: fluid, responsive and built in Unity to show what a custom touch experience can feel like.",
+      "An iPad app for browsing the studio's motion graphics, video editing and 3D work. The interface is the demo: fluid, responsive and built in Unity to show what a custom touch experience can feel like.",
     body: `Two goals: make the portfolio easy to flip through, and prove that a custom-built touch interface feels better than a web page on a tablet. It runs fully offline, which is how a kiosk on a show floor has to behave.`,
     built: [
       "Dynamic touch interface built in Unity",
@@ -137,8 +137,8 @@ The quiz, the timed exercise rounds and the receipt printer all run from one app
     year: 2020,
     kind: "game",
     summary:
-      "When events paused in 2020 I built a first-person shooter from scratch: the 3D models, textures, level design and all the code. A Node.js backend runs the online leaderboard, and a VR port for Meta Quest is in progress.",
-    body: `Trade shows stopped in 2020, so I used the time to build a game end to end. Every model and texture, every level and all of the gameplay code are mine, and I learned enough Node.js to run the leaderboard API. It started as a VR project, pivoted to first-person to nail the foundation, and is now heading back to VR on Meta Quest.`,
+      "When events paused in 2020 we built a first-person shooter from scratch: the 3D models, textures, level design and all the code. A Node.js backend runs the online leaderboard, and a VR port for Meta Quest is in progress.",
+    body: `Trade shows stopped in 2020, so we used the time to build a game end to end. Every model and texture, every level and all of the gameplay code are ours, and we learned enough Node.js to run the leaderboard API. It started as a VR project, pivoted to first-person to nail the foundation, and is now heading back to VR on Meta Quest.`,
     built: [
       "3D modeling and texturing in Cinema 4D",
       "Level design and gameplay programming",
@@ -159,7 +159,7 @@ The quiz, the timed exercise rounds and the receipt printer all run from one app
     kind: "experiment",
     summary:
       "A weekend experiment with the Meta2 augmented reality headset: a take on Breakout where you stand trapped inside a cylinder of bricks and throw spheres to break free. Built to learn what see-through AR could do in a real room.",
-    body: `The Meta2 was an early see-through AR headset (no relation to the company now called Meta). In one weekend I built a room-scale Breakout where the bricks surround the player. The headset is discontinued, but the lessons about spatial interaction carry straight into kiosk and installation work.`,
+    body: `The Meta2 was an early see-through AR headset (no relation to the company now called Meta). In one weekend we built a room-scale Breakout where the bricks surround the player. The headset is discontinued, but the lessons about spatial interaction carry straight into kiosk and installation work.`,
     built: ["Room-scale gameplay for a see-through AR headset", "3D assets and physics"],
     skills: ["Unity", "Augmented reality", "3D modeling"],
     thumbnail: thumb("meta2-augmented-reality-breakout", "Player inside a cylinder of colored bricks in augmented reality"),

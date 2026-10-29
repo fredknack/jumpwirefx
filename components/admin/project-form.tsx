@@ -75,7 +75,7 @@ export function ProjectForm({ project }: { project?: Project }) {
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <Field id={`${id}-built`} label="What I built" error={e.built} hint="One bullet per line">
+        <Field id={`${id}-built`} label="What we built" error={e.built} hint="One bullet per line">
           <textarea id={`${id}-built`} name="built" rows={5} defaultValue={project?.built.join("\n")} className={inputClass} />
         </Field>
         <Field id={`${id}-skills`} label="Skills" error={e.skills} hint="One per line">

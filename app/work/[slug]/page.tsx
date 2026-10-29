@@ -59,7 +59,7 @@ export default async function ProjectPage({ params }: Params) {
             <Markdown className="mt-6 text-white/75">{project.body}</Markdown>
           </div>
           <aside className="h-fit rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-            <h2 className="text-lg font-semibold">What I built</h2>
+            <h2 className="text-lg font-semibold">What we built</h2>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-white/80">
               {project.built.map((b) => (
                 <li key={b}>{b}</li>

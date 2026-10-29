@@ -1,4 +1,5 @@
 import { getProjects, getSiteSettings } from "@/lib/content";
+import { SITE_NAME, SITE_TAGLINE } from "@/lib/brand";
 import { siteUrl } from "@/lib/site-url";
 
 
@@ -6,7 +7,7 @@ export async function GET() {
   const base = siteUrl();
   const [site, projects] = await Promise.all([getSiteSettings(), getProjects()]);
   const lines = [
-    "# Fred Knack — Interactive kiosks for trade shows and lobbies",
+    `# ${SITE_NAME} — ${SITE_TAGLINE.charAt(0) + SITE_TAGLINE.slice(1)}`,
     "",
     `> ${site.intro}`,
     "",

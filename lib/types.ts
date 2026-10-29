@@ -19,7 +19,7 @@ export interface Project {
   summary: string;
   /** Markdown. */
   body: string;
-  /** "What I built" bullets. */
+  /** "What we built" bullets. */
   built: string[];
   skills: string[];
   thumbnail: Media;

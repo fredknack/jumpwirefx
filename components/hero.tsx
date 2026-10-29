@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Project, SiteSettings } from "@/lib/types";
 import { Container } from "@/components/container";
+import { SITE_NAME } from "@/lib/brand";
 import { VideoThumb } from "@/components/video-thumb";
 
 export function Hero({ site, reel }: { site: SiteSettings; reel: Project | null }) {
@@ -10,7 +11,7 @@ export function Hero({ site, reel }: { site: SiteSettings; reel: Project | null 
       <Container className="relative grid items-center gap-10 py-16 sm:py-24 lg:grid-cols-[1.1fr_1fr]">
         <div className="max-w-2xl">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-black/70">
-            Fred Knack · {site.location}
+            {SITE_NAME} · {site.location}
           </p>
           <h1 className="text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">{site.headline}</h1>
           <p className="mt-5 text-xl font-medium text-black/80 sm:text-2xl">{site.subhead}</p>

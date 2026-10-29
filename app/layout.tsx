@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_NAME } from "@/lib/brand";
 import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
@@ -11,8 +12,8 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "sw
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl()),
   title: {
-    default: "Fred Knack | Interactive Kiosks for Trade Shows and Lobbies | Portland, Oregon",
-    template: "%s | Fred Knack",
+    default: `${SITE_NAME} | Interactive Kiosks for Trade Shows and Lobbies`,
+    template: `%s | ${SITE_NAME}`,
   },
   description:
     "Custom interactive kiosks and installations for trade shows and corporate lobbies. Touchscreens, LED lighting, physical buttons and sensors, built end to end in Portland, Oregon.",
