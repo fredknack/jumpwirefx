@@ -78,35 +78,35 @@ The installation is edited by your team from any browser: new milestones, people
     published: true,
   },
   {
-    id: "s-interactive-video-walls",
-    slug: "interactive-video-walls",
-    title: "Interactive video walls",
-    tagline: "Many screens, one experience, driven by touch, sensors or a single button.",
+    id: "s-large-format-interactive-displays",
+    slug: "large-format-interactive-displays",
+    title: "Large-format interactive displays",
+    tagline: "Touch, sensors and physical controls on screens big enough to pull a crowd.",
     summary:
-      "Multi-screen video walls that respond to people: touch-driven content across synchronized displays, ambient loops when idle, and physical controls when a wall needs to work for a crowd instead of one visitor.",
-    body: `## More than a big screen
+      "Interactive experiences for large-format displays: touch, motion sensors and physical controls on 80-inch-plus screens and LED walls, with content built for the size, an ambient loop when idle, and interaction that works for a crowd as well as one visitor.",
+    body: `## Bigger than a kiosk
 
-A video wall that only loops a reel is wallpaper. Making it respond to a touch, a wave or a button press turns it into something people cross a room for. JumpWire builds the software that keeps many displays in step and the controls that let people drive them.
+Interactive displays now come at sizes that used to need a wall of screens: a single 86-inch touch display, a run of them, or an LED wall. At that size the interaction has to work for the person touching it and for everyone watching from behind. JumpWire designs for both.
 
 ## What JumpWire delivers
 
-- **Synchronization.** Content stays frame-accurate across every display, including video that jumps from one screen to another.
-- **Interaction.** Touch overlays, motion sensors, physical buttons or a kiosk in front of the wall, whichever fits the audience and the room.
-- **Content.** Motion graphics and video produced for the exact pixel dimensions of the wall, or your team's files mapped onto it.
-- **Operation.** Scheduled content, remote updates and recovery from power loss, so the wall runs without an operator.
+- **Interaction at scale.** Touch, motion sensors, physical buttons or a small kiosk in front of the display, whichever fits the audience and the room.
+- **Content built for the size.** Motion graphics and video produced for the exact pixel dimensions and viewing distance, or your team's files mapped onto the display.
+- **Synchronization.** When it is more than one screen, content stays frame-accurate across all of them, including video that moves from one to the next.
+- **Operation.** Scheduled content, remote updates and recovery from power loss, so the display runs without an operator.
 
 ## Bring what you already have
 
-Walls are often sold by an AV integrator before anyone asks what will play on them. JumpWire regularly comes in at that point, builds the interactive experience for the screens already on the wall, and works with the integrator on the controller setup.
-
-## Good to know
-
-- Bezels, aspect ratio and viewing distance drive the design; JumpWire will ask for the wall's exact layout before proposing content.
-- A wall can be interactive for one person and still broadcast to everyone else behind them. Designing for both is the interesting part.
+Large displays are often bought from an AV integrator before anyone asks what will play on them. JumpWire regularly comes in at that point, builds the interactive experience for the screens already on the wall, and works with the integrator on the controller setup.
 
 ## After launch
 
-Playlists and interactive content are managed remotely, so the wall can change for an event, a season or a visiting client without anyone touching the controller. Interaction data shows what people reach for and how long they stay, which is how the next round of content gets better.`,
+Playlists and interactive content are managed remotely, so the display can change for an event, a season or a visiting client without anyone touching it. Interaction data shows what people reach for and how long they stay, which is how the next round of content gets better.
+
+## Good to know
+
+- Screen size, aspect ratio and viewing distance drive the design; JumpWire will ask for the exact display and room before proposing content.
+- A display can be interactive for one person and still broadcast to everyone behind them. Designing for both is the interesting part.`,
     projectSlugs: ["nyit-interactive-video-wall", "interactive-corporate-timeline"],
     gallery: [],
     sortOrder: 30,

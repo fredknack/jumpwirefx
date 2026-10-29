@@ -24,6 +24,6 @@ describe("sitemap services", () => {
     const { default: sitemap } = await import("@/app/sitemap");
     const urls = (await sitemap()).map((e) => e.url);
     expect(urls).toContain("https://jumpwirefx.com/services/trade-show-kiosks");
-    expect(urls).toContain("https://jumpwirefx.com/services/lobby-installations");
+    expect(urls).toContain("https://jumpwirefx.com/services/large-format-interactive-displays");
   });
 });
