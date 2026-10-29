@@ -172,7 +172,7 @@ The quiz, the timed exercise rounds and the receipt printer all run from one app
     id: "p-reel",
     slug: "interactive-work-reel",
     title: "Interactive Work Reel",
-    tagline: "Four minutes of kiosks, walls and installations in action.",
+    tagline: "Demo reel · 4 min",
     kind: "experiment",
     summary:
       "A quick tour of interactive projects: touchscreen kiosks, multi-screen walls, physical buttons and animated content, all built to hold attention on a busy show floor.",
