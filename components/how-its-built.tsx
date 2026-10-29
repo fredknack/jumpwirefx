@@ -2,7 +2,7 @@ import { Container } from "@/components/container";
 
 const ITEMS = [
   { title: "Custom hardware", body: "Circuit boards, lighting, buttons and sensors designed and built for the cabinet, not bolted on after." },
-  { title: "Physical controls", body: "Buttons, coin slots, motion sensors and lights, wired to the screen so a press or a wave triggers the show. Custom microcontroller electronics, built in-house." },
+  { title: "Physical controls", body: "Buttons, coin slots, motion sensors and lights, wired to the screen so a press or a wave triggers the show." },
   { title: "On-screen experience", body: "Touch interfaces, synchronized video walls and animation built in Unity to run all day without a hiccup." },
   { title: "Remote content and analytics", body: "Clients change the media from any browser, and every tap and button press is logged to a dashboard they can open the next morning." },
 ];
