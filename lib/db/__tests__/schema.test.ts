@@ -37,11 +37,11 @@ describe("schema", () => {
 
   test("rejects a duplicate slug", async () => {
     const db = await createTestDb();
-    const base = { title: "A", tagline: "", kind: "kiosk", summary: "", body: "", thumbnail: { url: "/x.jpg", alt: "x" } };
+    const base = { title: "A", tagline: "", kind: "kiosk" as const, summary: "", body: "", thumbnail: { url: "/x.jpg", alt: "x" } };
     await db.insert(projects).values({ ...base, slug: "same" });
-    const err = await db.insert(projects).values({ ...base, slug: "same" }).catch((e: unknown) => e as Error & { cause?: { code?: string } });
+    const err = (await db.insert(projects).values({ ...base, slug: "same" }).then(() => null, (e: unknown) => e)) as (Error & { cause?: { code?: string } }) | null;
     expect(err).toBeInstanceOf(Error);
-    expect(err.cause?.code).toBe("23505");
+    expect(err?.cause?.code).toBe("23505");
   });
 
   test("site_settings holds a single row with id 1", async () => {
