@@ -3,7 +3,7 @@
 import { updateTag } from "next/cache";
 import { requireSession } from "@/lib/auth/session";
 import { getContentDb } from "@/lib/content";
-import { fieldErrors, formToProjectInput, formToSettings, projectInputSchema, settingsSchema } from "@/lib/admin/project-schema";
+import { fieldErrors, formHasGallery, formToProjectInput, formToSettings, projectInputSchema, settingsSchema } from "@/lib/admin/project-schema";
 import { deleteProject, findProject, findProjectById, reorderProjects, saveSettings, upsertProject } from "@/lib/db/queries";
 
 export type ActionState = { errors?: Record<string, string>; id?: string; ok?: boolean };
@@ -17,8 +17,8 @@ export async function saveProjectAction(_prev: ActionState, formData: FormData):
   const db = getContentDb();
   const taken = await findProject(db, parsed.data.slug);
   if (taken && taken.id !== parsed.data.id) return { errors: { slug: "already in use" } };
-  // The form has no gallery editor yet; never let a save wipe an existing gallery.
-  const existing = parsed.data.id ? await findProjectById(db, parsed.data.id) : null;
+  // A form without the gallery editor must never wipe an existing gallery.
+  const existing = parsed.data.id && !formHasGallery(formData) ? await findProjectById(db, parsed.data.id) : null;
   const data = existing ? { ...parsed.data, gallery: existing.gallery } : parsed.data;
   try {
     const row = await upsertProject(db, data);

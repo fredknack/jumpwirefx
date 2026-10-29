@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { formToProjectInput, projectInputSchema, slugify } from "@/lib/admin/project-schema";
+import { formHasGallery, formToProjectInput, projectInputSchema, slugify } from "@/lib/admin/project-schema";
 
 const valid = {
   slug: "demo-kiosk", title: "Demo Kiosk", tagline: "A kiosk", client: "Acme", year: 2024, kind: "kiosk",
@@ -58,5 +58,28 @@ describe("formToProjectInput", () => {
     fd.set("title", "Hello World Kiosk");
     fd.set("slug", "");
     expect(formToProjectInput(fd).slug).toBe("hello-world-kiosk");
+  });
+});
+
+describe("gallery fields", () => {
+  const base = { title: "T", slug: "t", kind: "kiosk", summary: "", body: "", built: "", skills: "", thumbnailUrl: "/t.jpg", thumbnailAlt: "t", sortOrder: "1" };
+
+  test("parses repeated galleryUrl/Alt/Width/Height fields in order, skipping blank urls", () => {
+    const fd = new FormData();
+    for (const [k, v] of Object.entries(base)) fd.set(k, v);
+    fd.set("galleryPresent", "1");
+    for (const [u, a, w, h] of [["/g1.jpg", "one", "1600", "900"], ["", "blank", "", ""], ["/g2.jpg", "two", "", ""]]) {
+      fd.append("galleryUrl", u); fd.append("galleryAlt", a); fd.append("galleryWidth", w); fd.append("galleryHeight", h);
+    }
+    const input = formToProjectInput(fd);
+    expect(input.gallery).toEqual([{ url: "/g1.jpg", alt: "one", width: 1600, height: 900 }, { url: "/g2.jpg", alt: "two", width: undefined, height: undefined }]);
+    expect(formHasGallery(fd)).toBe(true);
+  });
+
+  test("a form without the gallery editor reports no gallery", () => {
+    const fd = new FormData();
+    for (const [k, v] of Object.entries(base)) fd.set(k, v);
+    expect(formHasGallery(fd)).toBe(false);
+    expect(formToProjectInput(fd).gallery).toEqual([]);
   });
 });

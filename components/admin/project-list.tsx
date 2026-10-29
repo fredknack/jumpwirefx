@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
@@ -41,6 +42,9 @@ export function ProjectList({ projects }: { projects: Project[] }) {
               ▼
             </button>
           </div>
+          <div className="relative hidden h-12 w-20 shrink-0 overflow-hidden rounded bg-white/5 sm:block">
+            <Image src={p.thumbnail.url} alt="" fill sizes="80px" className="object-cover" />
+          </div>
           <div className="min-w-0 flex-1">
             <Link href={`/admin/projects/${p.id}`} className="font-medium hover:text-brand">
               {p.title}
@@ -59,6 +63,9 @@ export function ProjectList({ projects }: { projects: Project[] }) {
           >
             {p.published ? "Published" : "Draft"}
           </button>
+          <Link href={`/admin/projects/${p.id}`} aria-label={`Edit ${p.title}`} className="rounded-md border border-white/20 px-3 py-1 text-sm hover:border-brand hover:text-brand">
+            Edit
+          </Link>
           <Link href={`/work/${p.slug}`} target="_blank" className="text-sm text-white/60 hover:text-white">
             View
           </Link>

@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useActionState, useEffect, useId, useState } from "react";
 import { saveProjectAction, type ActionState } from "@/app/admin/actions";
 import { Field, describedBy, inputClass } from "@/components/admin/field";
+import { GalleryField } from "@/components/admin/gallery-field";
 import { MediaField } from "@/components/admin/media-field";
 import { Markdown } from "@/components/markdown";
 import type { Project } from "@/lib/types";
@@ -89,6 +90,7 @@ export function ProjectForm({ project }: { project?: Project }) {
         </p>
       )}
       <MediaField name="video" label="Video" accept="video/mp4" kind="video" value={project?.video} />
+      <GalleryField value={project?.gallery ?? []} error={e.gallery} />
 
       <div className="flex flex-wrap gap-6">
         <label className="flex items-center gap-2 text-sm">

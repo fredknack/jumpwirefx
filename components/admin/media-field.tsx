@@ -1,7 +1,7 @@
 "use client";
 
-import { upload } from "@vercel/blob/client";
 import { useId, useState } from "react";
+import { uploadMedia } from "@/lib/admin/upload-client";
 import type { Media } from "@/lib/types";
 
 type Props = {
@@ -33,16 +33,9 @@ export function MediaField({ name, label, accept, value, kind = "image", require
     setError(null);
     setProgress(0);
     try {
-      const folder = kind === "video" ? "videos" : "thumbnails";
-      const safe = file.name.replace(/[^A-Za-z0-9._-]+/g, "-");
-      const blob = await upload(`uploads/${folder}/${safe}`, file, {
-        access: "public",
-        handleUploadUrl: "/api/admin/upload",
-        multipart: kind === "video",
-        onUploadProgress: (p) => setProgress(p.percentage),
-      });
-      setUrl(blob.url);
-      setDims(null);
+      const uploaded = await uploadMedia(file, kind, { onProgress: setProgress });
+      setUrl(uploaded.url);
+      setDims(uploaded.width && uploaded.height ? { width: uploaded.width, height: uploaded.height } : null);
     } catch (e) {
       setError((e as Error).message);
     } finally {

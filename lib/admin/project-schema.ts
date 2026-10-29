@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { ProjectInput } from "@/lib/db/queries";
-import type { SiteSettings } from "@/lib/types";
+import type { Media, SiteSettings } from "@/lib/types";
 
 export const SLUG_RE = /^[a-z0-9](?:[a-z0-9-]{1,78}[a-z0-9])$/;
 
@@ -57,6 +57,22 @@ const str = (fd: FormData, k: string) => String(fd.get(k) ?? "").trim();
 const optStr = (fd: FormData, k: string) => str(fd, k) || undefined;
 const num = (fd: FormData, k: string) => (str(fd, k) === "" ? undefined : Number(str(fd, k)));
 
+/** True when the form carried the gallery editor (so an empty list means "cleared", not "untouched"). */
+export function formHasGallery(fd: FormData): boolean {
+  return fd.has("galleryPresent");
+}
+
+const strs = (fd: FormData, k: string) => fd.getAll(k).map((v) => String(v ?? "").trim());
+const toNum = (v: string) => (v === "" ? undefined : Number(v));
+
+/** Repeated galleryUrl/galleryAlt/galleryWidth/galleryHeight fields, aligned by index; blank urls are dropped. */
+export function formToGallery(fd: FormData): Media[] {
+  const urls = strs(fd, "galleryUrl"), alts = strs(fd, "galleryAlt"), ws = strs(fd, "galleryWidth"), hs = strs(fd, "galleryHeight");
+  return urls
+    .map((url, i) => ({ url, alt: alts[i] ?? "", width: toNum(ws[i] ?? ""), height: toNum(hs[i] ?? "") }))
+    .filter((m) => m.url !== "");
+}
+
 /** Raw form → unvalidated ProjectInput shape (validate with projectInputSchema). */
 export function formToProjectInput(fd: FormData): ProjectInput & { id?: string } {
   const title = str(fd, "title");
@@ -76,7 +92,7 @@ export function formToProjectInput(fd: FormData): ProjectInput & { id?: string }
     skills: lines(fd.get("skills")),
     thumbnail: { url: str(fd, "thumbnailUrl"), alt: str(fd, "thumbnailAlt"), width: num(fd, "thumbnailWidth"), height: num(fd, "thumbnailHeight") },
     video: videoUrl ? { url: videoUrl, alt: str(fd, "videoAlt") || "Video" } : undefined,
-    gallery: [],
+    gallery: formToGallery(fd),
     featured: fd.get("featured") === "on",
     sortOrder: num(fd, "sortOrder") ?? 0,
     published: fd.get("published") === "on",
@@ -117,7 +133,8 @@ export function fieldErrors(error: z.ZodError): Record<string, string> {
   const out: Record<string, string> = {};
   for (const issue of error.issues) {
     const key = String(issue.path[0] ?? "form");
-    if (!(key in out)) out[key] = issue.message;
+    const nested = issue.path.length > 1 ? `${issue.path.slice(1).map((p) => (typeof p === "number" ? `item ${p + 1}` : p)).join(" ")}: ` : "";
+    if (!(key in out)) out[key] = nested + issue.message;
   }
   return out;
 }

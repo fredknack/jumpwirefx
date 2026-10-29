@@ -110,3 +110,32 @@ describe("editing preserves data the form does not carry", () => {
     expect(p.thumbnail).toEqual({ url: "/t.jpg", alt: "t", width: 1280, height: 720 });
   });
 });
+
+describe("gallery editing", () => {
+  test("a form with the gallery editor replaces the gallery, and an empty editor clears it", async () => {
+    const db = await createTestDb();
+    setContentDb(db);
+    const { upsertProject } = await import("@/lib/db/queries");
+    const row = await upsertProject(db, {
+      slug: "gal2", title: "Gal", tagline: "", kind: "kiosk", summary: "", body: "", built: [], skills: [],
+      thumbnail: { url: "/t.jpg", alt: "t" }, gallery: [{ url: "/old.jpg", alt: "old" }], featured: false, sortOrder: 1, published: true,
+    });
+    const fd = projectForm({ id: row.id, slug: "gal2", galleryPresent: "1" });
+    fd.append("galleryUrl", "/new.jpg"); fd.append("galleryAlt", "new"); fd.append("galleryWidth", "1280"); fd.append("galleryHeight", "720");
+    expect((await saveProjectAction({}, fd)).errors).toBeUndefined();
+    expect((await getProjects())[0].gallery).toEqual([{ url: "/new.jpg", alt: "new", width: 1280, height: 720 }]);
+
+    const empty = projectForm({ id: row.id, slug: "gal2", galleryPresent: "1" });
+    expect((await saveProjectAction({}, empty)).errors).toBeUndefined();
+    expect((await getProjects())[0].gallery).toEqual([]);
+  });
+
+  test("a gallery item without alt text is a field error", async () => {
+    const db = await createTestDb();
+    setContentDb(db);
+    const fd = projectForm({ slug: "gal3", galleryPresent: "1" });
+    fd.append("galleryUrl", "/x.jpg"); fd.append("galleryAlt", ""); fd.append("galleryWidth", ""); fd.append("galleryHeight", "");
+    const result = await saveProjectAction({}, fd);
+    expect(result.errors?.gallery).toMatch(/alt/i);
+  });
+});
