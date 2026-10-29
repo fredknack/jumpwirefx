@@ -1,7 +1,7 @@
 import { cacheLife, cacheTag } from "next/cache";
 import { getDb } from "@/lib/db/client";
-import { getSettings, listProjects, rowToProject, rowToSettings } from "@/lib/db/queries";
-import type { Project, SiteSettings } from "@/lib/types";
+import { getSettings, listProjects, listServices, rowToProject, rowToService, rowToSettings } from "@/lib/db/queries";
+import type { Project, Service, SiteSettings } from "@/lib/types";
 
 /**
  * Database reads for the public site, cached under the "content" tag.
@@ -19,6 +19,13 @@ export async function cachedPublishedProjects(): Promise<Project[]> {
 export async function cachedProject(slug: string): Promise<Project | null> {
   const projects = await cachedPublishedProjects();
   return projects.find((p) => p.slug === slug) ?? null;
+}
+
+export async function cachedPublishedServices(): Promise<Service[]> {
+  "use cache";
+  cacheLife("max");
+  cacheTag("content");
+  return (await listServices(getDb(), {})).map(rowToService);
 }
 
 export async function cachedSettings(): Promise<SiteSettings | null> {

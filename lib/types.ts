@@ -41,3 +41,21 @@ export interface SiteSettings {
   /** Slug of the project whose video plays in the home hero. */
   heroReelSlug: string;
 }
+
+/** A service page: one buyer intent ("trade show kiosks"), linking the projects that prove it. */
+export interface Service {
+  id: string;
+  slug: string;
+  title: string;
+  /** One line under the title. */
+  tagline: string;
+  /** One paragraph; meta description and the home-page teaser. */
+  summary: string;
+  /** Markdown. */
+  body: string;
+  heroImage?: Media;
+  /** Related project slugs, in display order. */
+  projectSlugs: string[];
+  sortOrder: number;
+  published: boolean;
+}

@@ -1,7 +1,7 @@
 import { asc, eq, inArray, sql } from "drizzle-orm";
 import type { DrizzleDb } from "./client";
-import { projects, siteSettings, type ProjectRow, type SiteSettingsRow } from "./schema";
-import type { Project, SiteSettings } from "@/lib/types";
+import { projects, services, siteSettings, type ProjectRow, type ServiceRow, type SiteSettingsRow } from "./schema";
+import type { Project, Service, SiteSettings } from "@/lib/types";
 
 /** Everything a project row holds except generated columns; `id` present means update. */
 export type ProjectInput = Omit<Project, "id"> & { id?: string };
@@ -62,6 +62,66 @@ export async function saveSettings(db: DrizzleDb, input: SiteSettings): Promise<
     .onConflictDoUpdate({ target: siteSettings.id, set: { ...input, updatedAt: sql`now()` } })
     .returning();
   return row;
+}
+
+export type ServiceInput = Omit<Service, "id"> & { id?: string };
+
+export async function listServices(db: DrizzleDb, opts: { includeUnpublished?: boolean }): Promise<ServiceRow[]> {
+  return db
+    .select()
+    .from(services)
+    .where(opts.includeUnpublished ? undefined : eq(services.published, true))
+    .orderBy(asc(services.sortOrder), asc(services.createdAt));
+}
+
+export async function findService(db: DrizzleDb, slug: string): Promise<ServiceRow | null> {
+  const [row] = await db.select().from(services).where(eq(services.slug, slug)).limit(1);
+  return row ?? null;
+}
+
+export async function findServiceById(db: DrizzleDb, id: string): Promise<ServiceRow | null> {
+  const [row] = await db.select().from(services).where(eq(services.id, id)).limit(1);
+  return row ?? null;
+}
+
+export async function upsertService(db: DrizzleDb, input: ServiceInput): Promise<ServiceRow> {
+  const { id, ...values } = input;
+  const data = { ...values, heroImage: values.heroImage ?? null };
+  if (id) {
+    const [row] = await db.update(services).set({ ...data, updatedAt: new Date() }).where(eq(services.id, id)).returning();
+    if (!row) throw new Error(`service ${id} not found`);
+    return row;
+  }
+  const [row] = await db.insert(services).values(data).returning();
+  return row;
+}
+
+export async function deleteService(db: DrizzleDb, id: string): Promise<void> {
+  await db.delete(services).where(eq(services.id, id));
+}
+
+export async function reorderServices(db: DrizzleDb, ids: string[]): Promise<void> {
+  if (ids.length === 0) return;
+  const cases = sql.join(ids.map((id, i) => sql`when ${id}::uuid then ${(i + 1) * 10}`), sql` `);
+  await db
+    .update(services)
+    .set({ sortOrder: sql`case ${services.id} ${cases} else ${services.sortOrder} end`, updatedAt: new Date() })
+    .where(inArray(services.id, ids));
+}
+
+export function rowToService(row: ServiceRow): Service {
+  return {
+    id: row.id,
+    slug: row.slug,
+    title: row.title,
+    tagline: row.tagline,
+    summary: row.summary,
+    body: row.body,
+    heroImage: row.heroImage ?? undefined,
+    projectSlugs: row.projectSlugs,
+    sortOrder: row.sortOrder,
+    published: row.published,
+  };
 }
 
 export function rowToProject(row: ProjectRow): Project {

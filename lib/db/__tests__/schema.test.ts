@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { describe, expect, test } from "vitest";
-import { projects, siteSettings } from "@/lib/db/schema";
+import { projects, services, siteSettings } from "@/lib/db/schema";
 import { createTestDb } from "@/lib/db/test-db";
 
 describe("schema", () => {
@@ -53,5 +53,20 @@ describe("schema", () => {
     expect(rows).toHaveLength(1);
     expect(rows[0].id).toBe(1);
     expect(rows[0].socialLinks).toEqual([{ label: "LinkedIn", url: "https://linkedin.com/in/x" }]);
+  });
+});
+
+describe("services table", () => {
+  test("inserts and reads back a service with jsonb fields, unique slug", async () => {
+    const db = await createTestDb();
+    const [row] = await db
+      .insert(services)
+      .values({ slug: "trade-show-kiosks", title: "Trade show kiosks", tagline: "t", summary: "s", body: "b", projectSlugs: ["a", "b"], heroImage: { url: "/h.jpg", alt: "h" }, sortOrder: 10, published: true })
+      .returning();
+    expect(row.id).toMatch(/[0-9a-f-]{36}/);
+    expect(row.projectSlugs).toEqual(["a", "b"]);
+    expect(row.heroImage?.url).toBe("/h.jpg");
+    const err = (await db.insert(services).values({ slug: "trade-show-kiosks", title: "Dup" }).then(() => null, (e: unknown) => e)) as (Error & { cause?: { code?: string } }) | null;
+    expect(err?.cause?.code).toBe("23505");
   });
 });

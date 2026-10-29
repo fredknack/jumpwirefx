@@ -1,9 +1,10 @@
-import type { Project, SiteSettings } from "@/lib/types";
+import type { Project, Service, SiteSettings } from "@/lib/types";
 import { projects as seedProjects } from "@/content/projects";
+import { services as seedServices } from "@/content/services";
 import { site as seedSite } from "@/content/site";
 import { getDb, hasDatabase, type DrizzleDb } from "@/lib/db/client";
-import { findProject, findProjectById, getSettings, listProjects, rowToProject, rowToSettings } from "@/lib/db/queries";
-import { cachedProject, cachedPublishedProjects, cachedSettings } from "@/lib/content-cached";
+import { findProject, findProjectById, findService, findServiceById, getSettings, listProjects, listServices, rowToProject, rowToService, rowToSettings } from "@/lib/db/queries";
+import { cachedProject, cachedPublishedProjects, cachedPublishedServices, cachedSettings } from "@/lib/content-cached";
 
 /**
  * Single access point for site content. With DATABASE_URL set, public reads
@@ -56,6 +57,33 @@ export async function getProjectById(id: string): Promise<Project | null> {
   if (!db) return null;
   const row = await findProjectById(db, id);
   return row ? rowToProject(row) : null;
+}
+
+export async function getServices(opts: { includeUnpublished?: boolean } = {}): Promise<Service[]> {
+  if (injected) return (await listServices(injected, opts)).map(rowToService);
+  if (hasDatabase()) {
+    if (opts.includeUnpublished) return (await listServices(getDb(), opts)).map(rowToService);
+    return cachedPublishedServices();
+  }
+  const list = opts.includeUnpublished ? seedServices : seedServices.filter((s) => s.published);
+  return [...list].sort((a, b) => a.sortOrder - b.sortOrder);
+}
+
+export async function getService(slug: string): Promise<Service | null> {
+  if (injected) {
+    const row = await findService(injected, slug);
+    return row && row.published ? rowToService(row) : null;
+  }
+  if (hasDatabase()) return (await cachedPublishedServices()).find((s) => s.slug === slug) ?? null;
+  return seedServices.find((s) => s.slug === slug && s.published) ?? null;
+}
+
+/** Admin: any service by id, uncached. Null without a database. */
+export async function getServiceById(id: string): Promise<Service | null> {
+  const db = liveDb();
+  if (!db) return null;
+  const row = await findServiceById(db, id);
+  return row ? rowToService(row) : null;
 }
 
 export async function getSiteSettings(): Promise<SiteSettings> {

@@ -36,6 +36,22 @@ export const siteSettings = pgTable("site_settings", {
   updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
 });
 
+export const services = pgTable("services", {
+  id: uuid("id").defaultRandom().primaryKey(),
+  slug: text("slug").notNull().unique(),
+  title: text("title").notNull(),
+  tagline: text("tagline").notNull().default(""),
+  summary: text("summary").notNull().default(""),
+  body: text("body").notNull().default(""),
+  heroImage: jsonb("hero_image").$type<Media>(),
+  projectSlugs: jsonb("project_slugs").$type<string[]>().notNull().default([]),
+  sortOrder: integer("sort_order").notNull().default(0),
+  published: boolean("published").notNull().default(false),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
 export type ProjectRow = typeof projects.$inferSelect;
+export type ServiceRow = typeof services.$inferSelect;
 export type NewProjectRow = typeof projects.$inferInsert;
 export type SiteSettingsRow = typeof siteSettings.$inferSelect;
