@@ -70,7 +70,7 @@ describe("brand", () => {
 describe("service SEO", () => {
   const service = {
     id: "s1", slug: "trade-show-kiosks", title: "Trade show kiosks", tagline: "Tag", summary: "A summary of the service.",
-    body: "## Body", heroImage: { url: "/h.jpg", width: 1600, height: 900, alt: "Hero" }, projectSlugs: ["demo-kiosk"], sortOrder: 1, published: true,
+    body: "## Body", heroImage: { url: "/h.jpg", width: 1600, height: 900, alt: "Hero" }, projectSlugs: ["demo-kiosk"], gallery: [], sortOrder: 1, published: true,
   };
 
   test("serviceMetadata uses title, summary, canonical and the hero image", () => {

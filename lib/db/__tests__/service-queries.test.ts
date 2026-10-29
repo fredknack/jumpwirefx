@@ -2,7 +2,7 @@ import { describe, expect, test } from "vitest";
 import { createTestDb } from "@/lib/db/test-db";
 import { deleteService, findService, findServiceById, listServices, reorderServices, upsertService } from "@/lib/db/queries";
 
-const input = { slug: "one", title: "One", tagline: "", summary: "", body: "", projectSlugs: [] as string[], sortOrder: 1, published: true };
+const input = { slug: "one", title: "One", tagline: "", summary: "", body: "", projectSlugs: [] as string[], gallery: [], sortOrder: 1, published: true };
 
 describe("service queries", () => {
   test("upsertService creates then updates by id", async () => {

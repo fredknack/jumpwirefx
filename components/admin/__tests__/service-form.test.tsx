@@ -9,7 +9,7 @@ import { ServiceForm } from "@/components/admin/service-form";
 
 const service: Service = {
   id: "11111111-1111-4111-8111-111111111111", slug: "trade-show-kiosks", title: "Trade show kiosks", tagline: "Tag", summary: "Sum", body: "## Body",
-  heroImage: { url: "/h.jpg", alt: "Hero" }, projectSlugs: ["two"], sortOrder: 10, published: true,
+  heroImage: { url: "/h.jpg", alt: "Hero" }, projectSlugs: ["two"], gallery: [], sortOrder: 10, published: true,
 };
 const options = [{ slug: "one", title: "One", published: true }, { slug: "two", title: "Two", published: false }];
 
