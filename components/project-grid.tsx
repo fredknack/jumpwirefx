@@ -9,9 +9,7 @@ export function ProjectGrid({ projects, id = "work", archiveCount = 0 }: { proje
       <Container>
         <div className="mb-10 max-w-2xl">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Selected work</h2>
-          <p className="mt-3 text-white/70">
-            Kiosks, walls and installations built for show floors and lobbies. Tap a thumbnail to watch; open a project for the build details.
-          </p>
+          <p className="mt-3 text-white/70">Kiosks, walls and installations built for show floors and lobbies.</p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((p, i) => (
