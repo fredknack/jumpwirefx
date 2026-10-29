@@ -10,7 +10,7 @@ export function ServiceCards({ services }: { services: Service[] }) {
       <Container>
         <div className="mb-10 max-w-2xl">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">What JumpWire builds</h2>
-          <p className="mt-3 text-white/70">Pick the one closest to your project; each page explains what you get and shows the work behind it.</p>
+          <p className="mt-3 text-white/70">Pick the one closest to your project.</p>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {services.map((s, i) => {
