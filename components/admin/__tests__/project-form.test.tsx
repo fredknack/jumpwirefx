@@ -14,7 +14,7 @@ const project: Project = {
   id: "11111111-1111-4111-8111-111111111111", slug: "demo-kiosk", title: "Demo Kiosk", tagline: "A kiosk", client: "Acme", year: 2024, kind: "installation",
   summary: "Summary text", body: "## Body\n\nText", built: ["LED strips", "Buttons"], skills: ["Unity", "Arduino"],
   thumbnail: { url: "/media/demo-kiosk/thumb.jpg", alt: "Demo poster" }, video: { url: "https://x/v.mp4", alt: "Demo video" },
-  gallery: [], featured: true, sortOrder: 20, published: true,
+  gallery: [], featured: true, sortOrder: 20, published: true, archived: false,
 };
 
 describe("ProjectForm", () => {
@@ -35,6 +35,7 @@ describe("ProjectForm", () => {
     expect(screen.getByLabelText(/featured/i)).toBeChecked();
     expect(screen.getByLabelText(/sort order/i)).toHaveValue(20);
     expect(screen.getByLabelText(/published/i)).toBeChecked();
+    expect(screen.getByLabelText(/archived/i)).not.toBeChecked();
     expect(document.querySelector('input[name="id"]')).toHaveValue(project.id);
   });
 

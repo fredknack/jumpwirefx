@@ -100,7 +100,7 @@ describe("editing preserves data the form does not carry", () => {
     const { upsertProject } = await import("@/lib/db/queries");
     const row = await upsertProject(db, {
       slug: "gal", title: "Gal", tagline: "", kind: "kiosk", summary: "", body: "", built: [], skills: [],
-      thumbnail: { url: "/t.jpg", alt: "t", width: 1280, height: 720 }, gallery: [{ url: "/g1.jpg", alt: "g1" }], featured: false, sortOrder: 1, published: true,
+      thumbnail: { url: "/t.jpg", alt: "t", width: 1280, height: 720 }, gallery: [{ url: "/g1.jpg", alt: "g1" }], featured: false, sortOrder: 1, published: true, archived: false,
     });
     const result = await saveProjectAction({}, projectForm({ id: row.id, slug: "gal", title: "Gal 2", thumbnailWidth: "1280", thumbnailHeight: "720" }));
     expect(result.errors).toBeUndefined();
@@ -118,7 +118,7 @@ describe("gallery editing", () => {
     const { upsertProject } = await import("@/lib/db/queries");
     const row = await upsertProject(db, {
       slug: "gal2", title: "Gal", tagline: "", kind: "kiosk", summary: "", body: "", built: [], skills: [],
-      thumbnail: { url: "/t.jpg", alt: "t" }, gallery: [{ url: "/old.jpg", alt: "old" }], featured: false, sortOrder: 1, published: true,
+      thumbnail: { url: "/t.jpg", alt: "t" }, gallery: [{ url: "/old.jpg", alt: "old" }], featured: false, sortOrder: 1, published: true, archived: false,
     });
     const fd = projectForm({ id: row.id, slug: "gal2", galleryPresent: "1" });
     fd.append("galleryUrl", "/new.jpg"); fd.append("galleryAlt", "new"); fd.append("galleryWidth", "1280"); fd.append("galleryHeight", "720");
@@ -137,5 +137,27 @@ describe("gallery editing", () => {
     fd.append("galleryUrl", "/x.jpg"); fd.append("galleryAlt", ""); fd.append("galleryWidth", ""); fd.append("galleryHeight", "");
     const result = await saveProjectAction({}, fd);
     expect(result.errors?.gallery).toMatch(/alt/i);
+  });
+});
+
+describe("toggleArchiveAction", () => {
+  test("moves a project into and out of the archive without touching published", async () => {
+    setContentDb(await createTestDb());
+    const id = (await saveProjectAction({}, projectForm())).id!;
+    const { toggleArchiveAction } = await import("@/app/admin/actions");
+    await toggleArchiveAction(id);
+    expect((await getProjects()).length).toBe(0);
+    expect((await getProjects({ archive: "only" })).map((p) => p.slug)).toEqual(["demo"]);
+    expect((await getProjects({ archive: "only" }))[0].published).toBe(true);
+    await toggleArchiveAction(id);
+    expect((await getProjects()).map((p) => p.slug)).toEqual(["demo"]);
+    expect(updateTag).toHaveBeenCalledWith("content");
+  });
+
+  test("the edit form's archived checkbox is saved", async () => {
+    setContentDb(await createTestDb());
+    const id = (await saveProjectAction({}, projectForm())).id!;
+    await saveProjectAction({}, projectForm({ id, archived: "on" }));
+    expect((await getProjects({ archive: "only" })).map((p) => p.slug)).toEqual(["demo"]);
   });
 });

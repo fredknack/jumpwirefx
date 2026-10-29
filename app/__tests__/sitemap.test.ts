@@ -3,7 +3,7 @@ import type { Project } from "@/lib/types";
 
 const mk = (slug: string, published: boolean): Project => ({
   id: slug, slug, title: slug, tagline: "t", kind: "kiosk", summary: "s", body: "b", built: [], skills: [],
-  thumbnail: { url: `/media/${slug}/thumb.jpg`, alt: "a" }, gallery: [], featured: false, sortOrder: 1, published,
+  thumbnail: { url: `/media/${slug}/thumb.jpg`, alt: "a" }, gallery: [], featured: false, sortOrder: 1, published, archived: false,
 });
 
 vi.mock("@/content/projects", () => ({ projects: [mk("live-one", true), mk("draft-one", false)] }));

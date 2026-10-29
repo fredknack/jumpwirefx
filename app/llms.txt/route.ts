@@ -5,7 +5,7 @@ import { siteUrl } from "@/lib/site-url";
 
 export async function GET() {
   const base = siteUrl();
-  const [site, projects, services] = await Promise.all([getSiteSettings(), getProjects(), getServices()]);
+  const [site, projects, services, archived] = await Promise.all([getSiteSettings(), getProjects(), getServices(), getProjects({ archive: "only" })]);
   const lines = [
     `# ${SITE_NAME} — ${SITE_TAGLINE.charAt(0) + SITE_TAGLINE.slice(1)}`,
     "",
@@ -21,6 +21,7 @@ export async function GET() {
     "",
     ...projects.map((p) => `- [${p.title}](${base}/work/${p.slug}): ${p.summary}`),
     "",
+    ...(archived.length ? ["## Archive (older work)", "", ...archived.map((p) => `- [${p.title}](${base}/work/${p.slug}): ${p.summary}`), ""] : []),
     "## Pages",
     "",
     `- [Home](${base})`,

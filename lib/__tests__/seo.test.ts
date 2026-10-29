@@ -10,7 +10,7 @@ const project: Project = {
   id: "p1", slug: "demo-kiosk", title: "Demo Kiosk", tagline: "Tag", kind: "kiosk",
   summary: "A short summary.", body: "Body", built: [], skills: ["Unity"],
   thumbnail: { url: "/media/demo-kiosk/thumb.jpg", width: 1280, height: 720, alt: "poster" },
-  gallery: [], featured: true, sortOrder: 1, published: true,
+  gallery: [], featured: true, sortOrder: 1, published: true, archived: false,
 };
 
 describe("projectMetadata", () => {
@@ -70,7 +70,7 @@ describe("brand", () => {
 describe("service SEO", () => {
   const service = {
     id: "s1", slug: "trade-show-kiosks", title: "Trade show kiosks", tagline: "Tag", summary: "A summary of the service.",
-    body: "## Body", heroImage: { url: "/h.jpg", width: 1600, height: 900, alt: "Hero" }, projectSlugs: ["demo-kiosk"], gallery: [], sortOrder: 1, published: true,
+    body: "## Body", heroImage: { url: "/h.jpg", width: 1600, height: 900, alt: "Hero" }, projectSlugs: ["demo-kiosk"], gallery: [], sortOrder: 1, published: true, archived: false,
   };
 
   test("serviceMetadata uses title, summary, canonical and the hero image", () => {

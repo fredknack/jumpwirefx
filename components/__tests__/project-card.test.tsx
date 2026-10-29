@@ -17,7 +17,7 @@ const base: Project = {
   gallery: [],
   featured: true,
   sortOrder: 1,
-  published: true,
+  published: true, archived: false,
 };
 
 describe("ProjectCard", () => {

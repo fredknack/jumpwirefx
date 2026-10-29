@@ -6,7 +6,7 @@ import { projects, siteSettings } from "@/lib/db/schema";
 
 const row = {
   slug: "db-kiosk", title: "DB Kiosk", tagline: "t", kind: "kiosk" as const, summary: "s", body: "b",
-  built: ["x"], skills: ["Unity"], thumbnail: { url: "/t.jpg", alt: "t" }, gallery: [], featured: true, sortOrder: 5, published: true,
+  built: ["x"], skills: ["Unity"], thumbnail: { url: "/t.jpg", alt: "t" }, gallery: [], featured: true, sortOrder: 5, published: true, archived: false,
 };
 
 describe("content module switch", () => {
@@ -43,5 +43,24 @@ describe("content module switch", () => {
     expect((await getSiteSettings()).headline).toBe("Interactive kiosks for trade shows and lobbies.");
     await db.insert(siteSettings).values({ headline: "From DB", email: "db@example.com" });
     expect((await getSiteSettings()).headline).toBe("From DB");
+  });
+});
+
+describe("archive", () => {
+  afterEach(() => setContentDb(undefined));
+
+  test("archived projects are excluded by default, listed with archive: 'only', and included with 'all'", async () => {
+    const db = await createTestDb();
+    await db.insert(projects).values([{ ...row, slug: "live", sortOrder: 1 }, { ...row, slug: "old", sortOrder: 2, archived: true }, { ...row, slug: "old-draft", archived: true, published: false }]);
+    setContentDb(db);
+    expect((await getProjects()).map((p) => p.slug)).toEqual(["live"]);
+    expect((await getProjects({ archive: "only" })).map((p) => p.slug)).toEqual(["old"]);
+    expect((await getProjects({ archive: "all" })).map((p) => p.slug)).toEqual(["live", "old"]);
+    expect((await getProjects({ archive: "all", includeUnpublished: true })).map((p) => p.slug)).toContain("old-draft");
+    expect((await getProject("old"))?.archived).toBe(true);
+  });
+
+  test("seed projects are never archived", async () => {
+    expect((await getProjects({ archive: "only" })).length).toBe(0);
   });
 });

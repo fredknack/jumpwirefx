@@ -53,6 +53,15 @@ export async function togglePublishAction(id: string): Promise<void> {
   updateTag("content");
 }
 
+export async function toggleArchiveAction(id: string): Promise<void> {
+  await requireSession();
+  const db = getContentDb();
+  const row = await findProjectById(db, id);
+  if (!row) return;
+  await upsertProject(db, { ...row, client: row.client ?? undefined, year: row.year ?? undefined, video: row.video ?? undefined, archived: !row.archived });
+  updateTag("content");
+}
+
 export async function reorderAction(ids: string[]): Promise<void> {
   await requireSession();
   await reorderProjects(getContentDb(), ids);

@@ -28,6 +28,8 @@ export interface Project {
   featured: boolean;
   sortOrder: number;
   published: boolean;
+  /** Kept on the site but out of the main grid; listed at /work/archive. */
+  archived: boolean;
 }
 
 export interface SiteSettings {

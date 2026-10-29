@@ -4,7 +4,7 @@ import { deleteProject, findProject, getSettings, listProjects, reorderProjects,
 
 const input = {
   slug: "one", title: "One", tagline: "", kind: "kiosk" as const, summary: "", body: "",
-  built: [], skills: [], thumbnail: { url: "/1.jpg", alt: "1" }, gallery: [], featured: false, sortOrder: 1, published: true,
+  built: [], skills: [], thumbnail: { url: "/1.jpg", alt: "1" }, gallery: [], featured: false, sortOrder: 1, published: true, archived: false,
 };
 
 describe("queries", () => {

@@ -99,6 +99,9 @@ export function ProjectForm({ project }: { project?: Project }) {
         <label className="flex items-center gap-2 text-sm">
           <input type="checkbox" name="published" defaultChecked={project?.published ?? false} /> Published
         </label>
+        <label className="flex items-center gap-2 text-sm">
+          <input type="checkbox" name="archived" defaultChecked={project?.archived ?? false} /> Archived
+        </label>
       </div>
 
       {e.form && (

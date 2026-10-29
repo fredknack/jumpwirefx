@@ -1,8 +1,9 @@
+import Link from "next/link";
 import type { Project } from "@/lib/types";
 import { Container } from "@/components/container";
 import { ProjectCard } from "@/components/project-card";
 
-export function ProjectGrid({ projects, id = "work" }: { projects: Project[]; id?: string }) {
+export function ProjectGrid({ projects, id = "work", archiveCount = 0 }: { projects: Project[]; id?: string; archiveCount?: number }) {
   return (
     <section id={id} className="scroll-mt-20 py-16 sm:py-24">
       <Container>
@@ -17,6 +18,13 @@ export function ProjectGrid({ projects, id = "work" }: { projects: Project[]; id
             <ProjectCard key={p.id} project={p} priority={i < 3} />
           ))}
         </div>
+        {archiveCount > 0 && (
+          <p className="mt-10 text-center">
+            <Link href="/work/archive" className="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold hover:border-brand hover:text-brand">
+              View the archive ({archiveCount} more {archiveCount === 1 ? "project" : "projects"})
+            </Link>
+          </p>
+        )}
       </Container>
     </section>
   );

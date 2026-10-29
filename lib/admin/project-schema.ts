@@ -44,7 +44,8 @@ export const projectInputSchema = z.object({
   featured: z.boolean().default(false),
   sortOrder: z.number().int().default(0),
   published: z.boolean().default(false),
-});
+  archived: z.boolean().default(false),
+}).refine((p) => p.slug !== "archive", { message: "reserved for the archive page", path: ["slug"] });
 
 export type ProjectInputParsed = z.infer<typeof projectInputSchema>;
 
@@ -96,6 +97,7 @@ export function formToProjectInput(fd: FormData): ProjectInput & { id?: string }
     featured: fd.get("featured") === "on",
     sortOrder: num(fd, "sortOrder") ?? 0,
     published: fd.get("published") === "on",
+    archived: fd.get("archived") === "on",
   };
 }
 

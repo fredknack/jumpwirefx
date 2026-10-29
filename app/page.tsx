@@ -10,7 +10,7 @@ import { organizationJsonLd } from "@/lib/seo";
 import { siteUrl } from "@/lib/site-url";
 
 export default async function Home() {
-  const [site, projects, services] = await Promise.all([getSiteSettings(), getProjects(), getServices()]);
+  const [site, projects, services, archived] = await Promise.all([getSiteSettings(), getProjects(), getServices(), getProjects({ archive: "only" })]);
   const reel = await getProject(site.heroReelSlug);
   const gridProjects = projects.filter((p) => p.slug !== site.heroReelSlug);
   return (
@@ -18,7 +18,7 @@ export default async function Home() {
       <JsonLd data={organizationJsonLd(site, siteUrl())} />
       <Hero site={site} reel={reel} />
       <ServiceCards services={services} />
-      <ProjectGrid projects={gridProjects} />
+      <ProjectGrid projects={gridProjects} archiveCount={archived.length} />
       <HowItsBuilt />
       <AfterLaunch href={services.some((s) => s.slug === "remote-content-and-usage-data") ? "/services/remote-content-and-usage-data" : null} />
       <ContactCta site={site} />

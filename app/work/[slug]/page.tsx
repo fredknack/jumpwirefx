@@ -14,7 +14,7 @@ import { siteUrl } from "@/lib/site-url";
 type Params = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-  const projects = await getProjects();
+  const projects = await getProjects({ archive: "all" });
   return projects.map((p) => ({ slug: p.slug }));
 }
 
@@ -31,7 +31,7 @@ export default async function ProjectPage({ params }: Params) {
   const { slug } = await params;
   const project = await getProject(slug);
   if (!project) notFound();
-  const all = await getProjects();
+  const all = await getProjects({ archive: project.archived ? "only" : "exclude" });
   const i = all.findIndex((p) => p.slug === project.slug);
   const prev = i > 0 ? all[i - 1] : null;
   const next = i < all.length - 1 ? all[i + 1] : null;

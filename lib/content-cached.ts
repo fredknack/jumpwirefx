@@ -12,7 +12,7 @@ export async function cachedPublishedProjects(): Promise<Project[]> {
   "use cache";
   cacheLife("max");
   cacheTag("content");
-  return (await listProjects(getDb(), {})).map(rowToProject);
+  return (await listProjects(getDb(), { archive: "all" })).map(rowToProject);
 }
 
 /** Resolved from the cached list so unknown slugs never create cache entries or queries. */

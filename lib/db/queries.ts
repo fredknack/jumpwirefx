@@ -1,4 +1,4 @@
-import { asc, eq, inArray, sql } from "drizzle-orm";
+import { and, asc, eq, inArray, sql } from "drizzle-orm";
 import type { DrizzleDb } from "./client";
 import { projects, services, siteSettings, type ProjectRow, type ServiceRow, type SiteSettingsRow } from "./schema";
 import type { Project, Service, SiteSettings } from "@/lib/types";
@@ -6,11 +6,18 @@ import type { Project, Service, SiteSettings } from "@/lib/types";
 /** Everything a project row holds except generated columns; `id` present means update. */
 export type ProjectInput = Omit<Project, "id"> & { id?: string };
 
-export async function listProjects(db: DrizzleDb, opts: { includeUnpublished?: boolean }): Promise<ProjectRow[]> {
+export type ArchiveFilter = "exclude" | "only" | "all";
+export type ListProjectsOpts = { includeUnpublished?: boolean; archive?: ArchiveFilter };
+
+export async function listProjects(db: DrizzleDb, opts: ListProjectsOpts): Promise<ProjectRow[]> {
+  const archive = opts.archive ?? "exclude";
+  const conds = [];
+  if (!opts.includeUnpublished) conds.push(eq(projects.published, true));
+  if (archive !== "all") conds.push(eq(projects.archived, archive === "only"));
   return db
     .select()
     .from(projects)
-    .where(opts.includeUnpublished ? undefined : eq(projects.published, true))
+    .where(conds.length ? and(...conds) : undefined)
     .orderBy(asc(projects.sortOrder), asc(projects.createdAt));
 }
 
@@ -144,6 +151,7 @@ export function rowToProject(row: ProjectRow): Project {
     featured: row.featured,
     sortOrder: row.sortOrder,
     published: row.published,
+    archived: row.archived,
   };
 }
 

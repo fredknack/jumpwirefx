@@ -4,7 +4,7 @@ import { formHasGallery, formToProjectInput, projectInputSchema, slugify } from 
 const valid = {
   slug: "demo-kiosk", title: "Demo Kiosk", tagline: "A kiosk", client: "Acme", year: 2024, kind: "kiosk",
   summary: "Summary", body: "Body", built: ["LED"], skills: ["Unity"], thumbnail: { url: "/t.jpg", alt: "t" },
-  gallery: [], featured: false, sortOrder: 10, published: true,
+  gallery: [], featured: false, sortOrder: 10, published: true, archived: false,
 };
 
 describe("slugify", () => {
@@ -47,7 +47,7 @@ describe("formToProjectInput", () => {
       sortOrder: "30", published: "on",
     })) fd.set(k, v);
     const input = formToProjectInput(fd);
-    expect(input).toMatchObject({ built: ["One", "Two"], skills: ["Unity", "Arduino"], sortOrder: 30, published: true, featured: false, kind: "installation" });
+    expect(input).toMatchObject({ built: ["One", "Two"], skills: ["Unity", "Arduino"], sortOrder: 30, published: true, archived: false, featured: false, kind: "installation" });
     expect(input.client).toBeUndefined();
     expect(input.year).toBeUndefined();
     expect(input.video).toBeUndefined();

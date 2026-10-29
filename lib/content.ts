@@ -3,7 +3,7 @@ import { projects as seedProjects } from "@/content/projects";
 import { services as seedServices } from "@/content/services";
 import { site as seedSite } from "@/content/site";
 import { getDb, hasDatabase, type DrizzleDb } from "@/lib/db/client";
-import { findProject, findProjectById, findService, findServiceById, getSettings, listProjects, listServices, rowToProject, rowToService, rowToSettings } from "@/lib/db/queries";
+import { findProject, findProjectById, findService, findServiceById, getSettings, listProjects, listServices, rowToProject, rowToService, rowToSettings, type ListProjectsOpts } from "@/lib/db/queries";
 import { cachedProject, cachedPublishedProjects, cachedPublishedServices, cachedSettings } from "@/lib/content-cached";
 
 /**
@@ -31,15 +31,22 @@ export function getContentDb(): DrizzleDb {
   return db;
 }
 
-export async function getProjects(opts: { includeUnpublished?: boolean } = {}): Promise<Project[]> {
+const archiveFilter = (archive: ListProjectsOpts["archive"]) => (p: Project) =>
+  archive === "all" ? true : archive === "only" ? p.archived : !p.archived;
+
+/**
+ * Published projects, excluding archived ones unless `archive` says otherwise
+ * ("only" lists the archive, "all" lists both). `includeUnpublished` is for the admin.
+ */
+export async function getProjects(opts: ListProjectsOpts = {}): Promise<Project[]> {
   if (injected) return (await listProjects(injected, opts)).map(rowToProject);
   if (hasDatabase()) {
     // Admin reads (drafts included) bypass the cache so edits show immediately.
     if (opts.includeUnpublished) return (await listProjects(getDb(), opts)).map(rowToProject);
-    return cachedPublishedProjects();
+    return (await cachedPublishedProjects()).filter(archiveFilter(opts.archive));
   }
   const list = opts.includeUnpublished ? seedProjects : seedProjects.filter((p) => p.published);
-  return [...list].sort((a, b) => a.sortOrder - b.sortOrder);
+  return [...list].filter(archiveFilter(opts.archive)).sort((a, b) => a.sortOrder - b.sortOrder);
 }
 
 export async function getProject(slug: string): Promise<Project | null> {

@@ -34,6 +34,7 @@ The content lives in the cloud and the client's team edits it through a custom c
     featured: true,
     sortOrder: 10,
     published: true,
+    archived: false,
   },
   {
     id: "p-bebop",
@@ -59,6 +60,7 @@ We built the on-screen visuals, programmed the link between the screens and the 
     featured: true,
     sortOrder: 20,
     published: true,
+    archived: false,
   },
   {
     id: "p-nyit",
@@ -83,6 +85,7 @@ When the wall is idle it drops into an ambient loop that mixes 2D graphics with 
     featured: true,
     sortOrder: 30,
     published: true,
+    archived: false,
   },
   {
     id: "p-kaiser",
@@ -107,6 +110,7 @@ The quiz, the timed exercise rounds and the receipt printer all run from one app
     featured: true,
     sortOrder: 40,
     published: true,
+    archived: false,
   },
   {
     id: "p-ipad",
@@ -128,6 +132,7 @@ The quiz, the timed exercise rounds and the receipt printer all run from one app
     featured: false,
     sortOrder: 50,
     published: true,
+    archived: false,
   },
   {
     id: "p-fps",
@@ -150,6 +155,7 @@ The quiz, the timed exercise rounds and the receipt printer all run from one app
     featured: false,
     sortOrder: 60,
     published: true,
+    archived: false,
   },
   {
     id: "p-meta2",
@@ -167,6 +173,7 @@ The quiz, the timed exercise rounds and the receipt printer all run from one app
     featured: false,
     sortOrder: 70,
     published: true,
+    archived: false,
   },
   {
     id: "p-reel",
@@ -184,6 +191,7 @@ The quiz, the timed exercise rounds and the receipt printer all run from one app
     featured: false,
     sortOrder: 80,
     published: true,
+    archived: false,
   },
 ];
 
