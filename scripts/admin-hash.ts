@@ -4,6 +4,7 @@
  *   pnpm admin:hash
  */
 import { hashSync } from "bcryptjs";
+import { envEscape } from "./lib/env-escape";
 import { createInterface } from "node:readline";
 import { Writable } from "node:stream";
 
@@ -17,5 +18,9 @@ rl.question("", (password) => {
     console.error("Use at least 12 characters.");
     process.exit(1);
   }
-  console.log(hashSync(password, 12));
+  const hash = hashSync(password, 12);
+  console.log("Vercel dashboard / `vercel env add` value (paste as-is):");
+  console.log(hash);
+  console.log("\n.env.local line (every $ escaped, or Next.js mangles it):");
+  console.log(`ADMIN_PASSWORD_HASH=${envEscape(hash)}`);
 });
