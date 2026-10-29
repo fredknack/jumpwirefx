@@ -1,17 +1,21 @@
-import { getProjects, getSiteSettings } from "@/lib/content";
+import { getProjects, getServices, getSiteSettings } from "@/lib/content";
 import { SITE_NAME, SITE_TAGLINE } from "@/lib/brand";
 import { siteUrl } from "@/lib/site-url";
 
 
 export async function GET() {
   const base = siteUrl();
-  const [site, projects] = await Promise.all([getSiteSettings(), getProjects()]);
+  const [site, projects, services] = await Promise.all([getSiteSettings(), getProjects(), getServices()]);
   const lines = [
     `# ${SITE_NAME} — ${SITE_TAGLINE.charAt(0) + SITE_TAGLINE.slice(1)}`,
     "",
     `> ${site.intro}`,
     "",
     `Location: ${site.location}. Contact: ${site.email}. Site: ${base}`,
+    "",
+    "## Services",
+    "",
+    ...services.map((s) => `- [${s.title}](${base}/services/${s.slug}): ${s.summary}`),
     "",
     "## Projects",
     "",

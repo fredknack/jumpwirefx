@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_NAME } from "@/lib/brand";
-import type { Project, SiteSettings } from "@/lib/types";
+import type { Project, Service, SiteSettings } from "@/lib/types";
 
 const abs = (base: string, url: string) => (url.startsWith("http") ? url : `${base}${url}`);
 
@@ -50,6 +50,32 @@ export function projectJsonLd(p: Project, siteUrl: string): object {
       uploadDate: p.year ? `${p.year}-01-01` : "2023-12-05",
     };
   }
+  return ld;
+}
+
+export function serviceMetadata(s: Service): Metadata {
+  const images = s.heroImage ? [{ url: s.heroImage.url, width: s.heroImage.width, height: s.heroImage.height, alt: s.heroImage.alt }] : undefined;
+  return {
+    title: s.title,
+    description: s.summary,
+    alternates: { canonical: `/services/${s.slug}` },
+    openGraph: { title: `${s.title} | ${SITE_NAME}`, description: s.summary, type: "website", url: `/services/${s.slug}`, images, locale: "en_US", siteName: SITE_NAME },
+    twitter: { card: images ? "summary_large_image" : "summary", title: s.title, description: s.summary, images: images?.map((i) => i.url) },
+  };
+}
+
+export function serviceJsonLd(s: Service, site: SiteSettings, siteUrl: string): object {
+  const ld: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: s.title,
+    description: s.summary,
+    url: `${siteUrl}/services/${s.slug}`,
+    serviceType: s.title,
+    areaServed: "US",
+    provider: { "@type": "Organization", name: SITE_NAME, url: siteUrl, email: site.email, address: { "@type": "PostalAddress", addressLocality: "Portland", addressRegion: "OR", addressCountry: "US" } },
+  };
+  if (s.heroImage) ld.image = abs(siteUrl, s.heroImage.url);
   return ld;
 }
 

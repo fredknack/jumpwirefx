@@ -1,5 +1,4 @@
 import { afterEach, describe, expect, test } from "vitest";
-import { services as seedServices } from "@/content/services";
 import { getService, getServiceById, getServices, setContentDb } from "@/lib/content";
 import { createTestDb } from "@/lib/db/test-db";
 import { services } from "@/lib/db/schema";

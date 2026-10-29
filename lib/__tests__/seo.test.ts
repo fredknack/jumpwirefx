@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { organizationJsonLd, projectJsonLd, projectMetadata } from "@/lib/seo";
+import { organizationJsonLd, projectJsonLd, projectMetadata, serviceJsonLd, serviceMetadata } from "@/lib/seo";
 import type { Project, SiteSettings } from "@/lib/types";
 
 const site: SiteSettings = {
@@ -64,5 +64,30 @@ describe("brand", () => {
     const ld = projectJsonLd(project, "https://example.com") as { author: { "@type": string; name: string } };
     expect(ld.author).toEqual({ "@type": "Organization", name: "JumpWire", url: "https://example.com" });
     expect(JSON.stringify([m, ld])).not.toMatch(/fred knack/i);
+  });
+});
+
+describe("service SEO", () => {
+  const service = {
+    id: "s1", slug: "trade-show-kiosks", title: "Trade show kiosks", tagline: "Tag", summary: "A summary of the service.",
+    body: "## Body", heroImage: { url: "/h.jpg", width: 1600, height: 900, alt: "Hero" }, projectSlugs: ["demo-kiosk"], sortOrder: 1, published: true,
+  };
+
+  test("serviceMetadata uses title, summary, canonical and the hero image", () => {
+    const m = serviceMetadata(service);
+    expect(m.title).toBe("Trade show kiosks");
+    expect(m.description).toBe("A summary of the service.");
+    expect(m.alternates?.canonical).toBe("/services/trade-show-kiosks");
+    expect((m.openGraph as { images: { url: string }[] }).images[0].url).toBe("/h.jpg");
+  });
+
+  test("serviceJsonLd is a Service provided by the JumpWire Organization", () => {
+    const ld = serviceJsonLd(service, site, "https://example.com") as Record<string, unknown>;
+    expect(ld["@type"]).toBe("Service");
+    expect(ld.name).toBe("Trade show kiosks");
+    expect(ld.url).toBe("https://example.com/services/trade-show-kiosks");
+    expect(ld.provider).toMatchObject({ "@type": "Organization", name: "JumpWire", url: "https://example.com" });
+    expect(ld.areaServed).toBe("US");
+    expect(ld.image).toBe("https://example.com/h.jpg");
   });
 });

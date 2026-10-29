@@ -9,3 +9,11 @@ describe("llms.txt", () => {
     expect(text).toMatch(/\/work\/interactive-corporate-timeline/);
   });
 });
+
+describe("llms.txt services", () => {
+  test("has a Services section with each page and its summary", async () => {
+    const text = await (await GET()).text();
+    expect(text).toMatch(/## Services/);
+    expect(text).toMatch(/\[Trade show kiosks\]\(https:\/\/jumpwirefx\.com\/services\/trade-show-kiosks\): /);
+  });
+});

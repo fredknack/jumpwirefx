@@ -11,6 +11,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <span className="font-semibold text-white/50">Admin</span>
         <Link href="/admin" className="hover:text-brand">Projects</Link>
         <Link href="/admin/projects/new" className="hover:text-brand">New project</Link>
+        <Link href="/admin/services" className="hover:text-brand">Services</Link>
         <Link href="/admin/settings" className="hover:text-brand">Site settings</Link>
         <Link href="/" className="hover:text-brand">View site</Link>
         <form action="/admin/logout" method="post" className="ml-auto">

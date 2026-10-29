@@ -7,6 +7,7 @@ describe("SiteHeader", () => {
     render(<SiteHeader />);
     expect(screen.getByRole("link", { name: /jumpwire/i })).toHaveAttribute("href", "/");
     expect(screen.queryByText(/fred knack/i)).toBeNull();
+    expect(screen.getByRole("link", { name: "Services" })).toHaveAttribute("href", "/#services");
     expect(screen.getByRole("link", { name: "Work" })).toHaveAttribute("href", "/#work");
     expect(screen.getByRole("link", { name: "Contact" })).toHaveAttribute("href", "/contact");
   });
